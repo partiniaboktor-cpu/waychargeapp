@@ -1,0 +1,15 @@
+.container25{
+      max-width: 400px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  height: 115vh;
+  overflow-y: scroll;
+}
+.tick{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+}

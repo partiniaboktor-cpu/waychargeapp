@@ -22,6 +22,7 @@ import Points from './Pages/Points';
 import Request from './Pages/Request';
 import Location from './Pages/Location';
 import Profile from './Pages/Profile';
+import Requestconfirmation from './Pages/Requestconfirmation';
 
 
 const RoutingApp = () => {
@@ -51,6 +52,7 @@ const RoutingApp = () => {
       <Route path='/Request' element={<Request /> } />
       <Route path='/Location' element={<Location /> } />
       <Route path='/Profile' element={<Profile /> } />
+      <Route path='/Requestconfirmation' element={<Requestconfirmation /> } />
 
     </Routes>
     </BrowserRouter>
