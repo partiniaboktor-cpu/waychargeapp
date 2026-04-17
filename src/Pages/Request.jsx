@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Request.css'
 import Uppernav from '../Components/Uppernav';
+import Button from '../Components/Button';
+import Nav from '../Components/Nav';
 
 const Request = () => {
     return (  <>
@@ -40,10 +42,11 @@ const Request = () => {
       </div>
 
       {/* Button */}
-      <button className="btn22">
-        <span className="btn-icon22">⚡</span>
-        Send Request
-      </button>
+      <div className='rebtn'>
+      <Button word='Send Request' />
+
+      </div>
+<Nav />
 
     </div>
     
