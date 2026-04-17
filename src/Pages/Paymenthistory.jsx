@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Notfication.css'
+import './Paymenthistory.css'
 import Uppernav from '../Components/Uppernav';
 import Nav from "../Components/Nav";
 import no from '../Assets/no.svg'

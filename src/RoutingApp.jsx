@@ -18,6 +18,7 @@ import Coffeedetail from './Pages/Coffeedetail';
 import Payment from './Pages/Payment';
 import Visacard from './Pages/Visacard';
 import Notifications from './Pages/Paymenthistory';
+import Points from './Pages/Points';
 
 const RoutingApp = () => {
   return (
@@ -42,6 +43,7 @@ const RoutingApp = () => {
       <Route path='/Payment' element={<Payment /> } />
       <Route path='/Visacard' element={<Visacard /> } />
       <Route path='/Notifications' element={<Notifications /> } />
+      <Route path='/Points' element={<Points /> } />
 
     </Routes>
     </BrowserRouter>
