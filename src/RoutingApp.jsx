@@ -21,6 +21,7 @@ import Notifications from './Pages/Paymenthistory';
 import Points from './Pages/Points';
 import Request from './Pages/Request';
 import Location from './Pages/Location';
+import Profile from './Pages/Profile';
 
 
 const RoutingApp = () => {
@@ -49,6 +50,7 @@ const RoutingApp = () => {
       <Route path='/Points' element={<Points /> } />
       <Route path='/Request' element={<Request /> } />
       <Route path='/Location' element={<Location /> } />
+      <Route path='/Profile' element={<Profile /> } />
 
     </Routes>
     </BrowserRouter>
