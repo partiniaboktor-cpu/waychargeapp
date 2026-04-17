@@ -19,7 +19,7 @@ import Payment from './Pages/Payment';
 import Visacard from './Pages/Visacard';
 import Notifications from './Pages/Paymenthistory';
 import Points from './Pages/Points';
-
+import Request from './Pages/Request';
 const RoutingApp = () => {
   return (
     <>
@@ -44,6 +44,7 @@ const RoutingApp = () => {
       <Route path='/Visacard' element={<Visacard /> } />
       <Route path='/Notifications' element={<Notifications /> } />
       <Route path='/Points' element={<Points /> } />
+      <Route path='/Request' element={<Request /> } />
 
     </Routes>
     </BrowserRouter>

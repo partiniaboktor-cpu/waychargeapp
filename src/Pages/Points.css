@@ -4,6 +4,9 @@
   padding: 20px;
   font-family: Arial, sans-serif;
   background: linear-gradient(180deg, #ffffff, #e9f5df);
+
+   height: 120vh;      /* full screen */
+  overflow-y: auto;   /* enable scroll */
 }
 
 /* Title */
@@ -11,6 +14,9 @@
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 20px;
+      font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Points Card */
@@ -61,10 +67,14 @@
   padding: 15px;
   border-radius: 15px;
   margin-bottom: 25px;
+  
 }
 
 .discover-text21 h2 {
   font-size: 20px;
+    font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .discover21 img {
@@ -75,6 +85,9 @@
 .missions-title21 {
   font-size: 20px;
   margin-bottom: 15px;
+      font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .missions-grid21 {
