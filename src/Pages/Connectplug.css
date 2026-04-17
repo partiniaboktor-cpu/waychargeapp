@@ -1,0 +1,129 @@
+.status-page-container10 {
+  background-color: #ffffff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  margin-top: 10%;
+
+  overflow-y: auto; 
+
+}
+
+.header-section10 {
+  text-align: center;
+}
+
+.car-model10 {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+  color: #000;
+  letter-spacing: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.car-subtext10 {
+  color: #9e9e9e;
+  font-size: 16px;
+  margin-top: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Visual Illustration */
+.illustration-wrapper10 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.glow-background10 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(139, 195, 74, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.icon-container10 {
+  position: relative;
+  z-index: 2;
+  font-size: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Text Box */
+.info-box10 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.status-title10 {
+  font-size: 24px;
+  font-weight: 200;
+  color: #000;
+  margin-bottom: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.status-subtitle10 {
+  color: #757575;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Button Styling */
+.footer-action10 {
+  width: 100%;
+  max-width: 350px;
+}
+
+.connect-btn10 {
+  width: 100%;
+  height: 75px;
+  background: linear-gradient(to right, #7cb342, #8bc34a);
+  border: none;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(124, 179, 66, 0.3);
+}
+
+.bolt-icon-bg10 {
+  background-color: #1a1a1a;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bolt-shape10 {
+  color: #8bc34a;
+  font-size: 1.8rem;
+}
+
+.btn-label10 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  flex-grow: 1;
+  text-align: center;
+  margin-right: 40px; /* Offset for the bolt icon to center text */
+}
+
+.connect-btn10:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}

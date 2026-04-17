@@ -1,0 +1,105 @@
+.status-container13{
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Segoe UI;
+
+  overflow-y: auto;
+}
+
+.car-title13{
+margin-top:10px;
+font-size:24px;
+font-weight:bold;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.car-subtitle13{
+color:#888;
+margin-bottom:20px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+}
+
+.circle-wrapper13{
+display:flex;
+justify-content:center;
+align-items:center;
+margin:20px 0;
+}
+
+.progress-circle13{
+width:260px;
+height:260px;
+border-radius:50%;
+border:20px solid #8bc34a;
+border-left-color:#e0e0e0;
+border-top-color:#e0e0e0;
+display:flex;
+justify-content:center;
+align-items:center;
+background:white;
+}
+
+.car-image13{
+width:160px;
+border-radius:10px;
+}
+
+.charging-text13{
+font-size:24px;
+font-weight:bold;
+margin:20px 0;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.info-card13{
+display:flex;
+justify-content:space-between;
+background:white;
+border-radius:15px;
+padding:20px;
+width:90%;
+max-width:350px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+border:2px solid #8DC63F;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.info-item13{
+text-align:left;
+}
+
+.info-label13{
+color:#777;
+margin:0;
+}
+
+.info-value13{
+margin:5px 0 0 0;
+font-weight:bold;
+}
+
+.message13{
+color:#777;
+margin:25px 0;
+text-align:center;
+max-width:320px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.coffee-btn13{
+width:100%;
+max-width:350px;
+padding:15px;
+border:2px dashed #8DC63F;
+background:transparent;
+color:#8DC63F;
+font-size:18px;
+border-radius:30px;
+margin-bottom:15px;
+cursor:pointer;
+}
+

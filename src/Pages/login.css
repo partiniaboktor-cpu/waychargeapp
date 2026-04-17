@@ -1,0 +1,152 @@
+/* Container */
+.container-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20%;
+
+display: flex;
+justify-content: center;
+align-items: center;
+align-content: center;
+flex-direction: column;
+}
+.logins{
+display: flex;
+justify-content: center;
+align-items: center;
+align-content: center;
+flex-direction: column;
+}
+.login-screen{
+display: flex;
+justify-content: center;
+align-items: center;
+align-content: center;
+flex-direction: column;
+}
+/* Card with max width 414px */
+.login-card {
+  width: 100%;
+  max-width: 414px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
+    padding-top: 10%;
+}
+
+/* Logo */
+.logo-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo-text {
+  color: #7cb342;
+  font-weight: 500;
+}
+
+/* Labels */
+label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Input box */
+.input-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  width: 330px;
+}
+
+.input-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.icon {
+  font-size: 16px;
+}
+
+.icon.right {
+  cursor: pointer;
+}
+
+/* Forgot */
+.forgot {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.forgot a {
+  font-size: 13px;
+  color: #555;
+  text-decoration: underline;
+}
+
+/* Button */
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: #7cb342;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: #ccc;
+}
+
+.divider p {
+  margin: 0 10px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Signup */
+.signup {
+  text-align: center;
+  font-size: 14px;
+}
+
+.signup a {
+  text-decoration: underline;
+  color: #333;
+}
+
+/* Help */
+.help {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #777;
+}

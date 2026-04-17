@@ -1,0 +1,362 @@
+.main-container7 {
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  padding-bottom: 100px;
+
+  overflow-y: auto;
+
+}
+
+/* Header */
+.header7 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.profile-info7 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar7 {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.user-name7 {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.notification-wrapper7 {
+  position: relative;
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.badge7 {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #e57373;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+/* Main Button */
+.charge-btn7 {
+  width: 100%;
+  background: #8bc34a;
+  border: none;
+  border-radius: 20px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(139, 195, 74, 0.2);
+}
+
+.bolt-circle7 {
+  background: #33691e;
+  color: #8bc34a;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-right: 20px;
+}
+
+.charge-text7 {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Promo Card */
+.promo-card7 {
+  background-color: #212121;
+  border-radius: 25px;
+  padding: 20px;
+  height: 150px;
+  position: relative;
+  margin-bottom: 30px;
+  overflow: visible;
+  margin-top: 5%;
+}
+
+.brand-name7 {
+  color: #8bc34a;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 5px;
+}
+
+.promo-title7 {
+  color: white;
+  font-size: 16px;
+  width: 60%;
+  line-height: 1.2;
+    font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;
+    -webkit-text-stroke: 1px #ffffff; /* Stroke width and color */
+
+}
+
+.car-image7 {
+  position: absolute;
+  width: 280px;
+  right: -20px;
+  bottom: -20px;
+}
+
+/* Stats */
+.stats-grid7 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.stat-box-dark7 {
+  background: #212121;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.stat-box-light7 {
+  background: white;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.icon-square7 {
+  background: #333;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.stat-header7 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.stat-label7 { color: white; }
+.stat-label-dark7 { color: #333; font-weight: 600; }
+
+.progress-bar-bg7 {
+  background: #444;
+  border-radius: 10px;
+  height: 35px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill7 {
+  background: #8bc34a;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-weight: 700;
+}
+
+.distance-val7 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.time-tag7 {
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.stat-footer7 { color: #bbb; font-size: 0.75rem; text-align: center; }
+.stat-footer-dark7 { color: #888; font-size: 0.75rem; text-align: center; }
+
+/* Nearby */
+.section-header7 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.view-all7 { color: #aaa; text-decoration: underline; font-size: 0.9rem; }
+
+.station-card7 {
+  background: white;
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loc-icon7 {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.station-name7 { font-weight: 600; margin: 0; }
+.station-desc7 { font-size: 0.8rem; color: #666; margin: 0; }
+
+.map-thumb7 {
+  width: 50px;
+  height: 50px;
+  background: #1a237e;
+  border-radius: 10px;
+}
+
+.container9 {
+  padding: 20px;
+  font-family: sans-serif;
+
+}
+
+/* Section Header */
+.section-header9 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+    font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.view-all9 {
+  color: #22222285;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Missions */
+.missions9 {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.mission-card9 {
+  flex: 1;
+  text-align: center;
+}
+
+.mission-img9 {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.points9 {
+  color: #888;
+  margin-top: 5px;
+  border-bottom: 1px solid #ccc;
+  display: inline-block;
+}
+
+/* Booking Card */
+.booking-card9 {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.booking-img9 {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.booking-info9 h3 {
+  margin: 5px 0;
+}
+.location9 {
+  color: #888;
+  font-size: 14px;
+}
+
+.booking-details9 {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #333;
+}
+
+/* Status */
+.booking-status9 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.cancelled9 {
+  background: #c55;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 3px 5px 10px #2222222f;
+
+}
+
+/* Buttons */
+.actions9 {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.view-btn9 {
+  flex: 1;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  background: #f0f0f0;
+  box-shadow: 5px 7px 10px #2222222f;
+  font-size: 16px;
+}
+
+.book-btn9 {
+  flex: 1;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  background: #8DC63F;
+  color: white;
+  font-size: 16px;
+    box-shadow: 5px 7px 10px #2222222f;
+}

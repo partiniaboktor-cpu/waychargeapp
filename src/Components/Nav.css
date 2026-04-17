@@ -1,0 +1,54 @@
+.bottom-nav8 {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100%;
+  max-width: 414px;
+  height: 80px;
+
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border-top: 1px solid #ddd;
+  /* border-radius: 20px 20px 0 0; optional nice mobile feel */
+}
+
+.nav-item8 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.icon8 {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 5px;
+}
+
+/* Active (Home style) */
+.active8 {
+background: radial-gradient(white, #8DC63F); 
+  padding: 10px 16px;
+  border-radius: 20px;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.active8 span {
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Optional hover effect */
+.nav-item8:hover {
+  transform: translateY(-3px);
+}

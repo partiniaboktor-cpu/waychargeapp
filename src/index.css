@@ -12,6 +12,7 @@ html , body{
 width: 100%;
 max-width: 414px;
 margin: 0 auto;
-    background-color: aqua;
-    height: 20vh;
+background-color: #ffffff;
+height: 100vh;
+overflow-y: auto;        /* 🚀 scroll only here */
 }
