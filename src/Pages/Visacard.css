@@ -1,0 +1,123 @@
+
+
+.container18 {
+  max-width: 414px;
+  margin: auto;
+  padding: 20px;
+
+  height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* CARD */
+.cardBox18 {
+  background: linear-gradient(to right, #1c1c1c, #2b2b2b);
+  color: white;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.chip18 {
+  width: 40px;
+}
+
+.bank18 {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.number18 {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.date18 {
+  margin-top: 10px;
+}
+
+.holder18 {
+  margin-top: 20px;
+}
+
+.master18 {
+  width: 50px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+/* FORM */
+.form18 {
+  margin-top: 20px;
+}
+
+.input18 {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  margin-top: 10px;
+  background: #ddd;
+}
+
+.row18 {
+  display: flex;
+  gap: 10px;
+}
+
+/* TOGGLES */
+.toggles18 {
+  margin-top: 20px;
+}
+
+.toggleRow18 {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.switch18 {
+  width: 50px;
+  height: 25px;
+  background: #cfd8c3;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.switch18::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #9e9e9e;
+  position: absolute;
+  top: 2.5px;
+  left: 3px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.on18 {
+  background: #8bc34a;
+}
+
+.on18::after {
+  left: 27px;
+  background: #558b2f;
+}
+
+/* BUTTON */
+.btn18 {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  background: #8bc34a;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 18px;
+}

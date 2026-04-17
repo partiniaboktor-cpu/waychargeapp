@@ -1,0 +1,89 @@
+
+.container20 {
+  max-width: 414px;
+  margin: auto;
+  padding: 20px;
+
+  height: 105vh;      /* full screen */
+  overflow-y: auto;   /* enable scroll */
+}
+
+/* back button */
+.back20 {
+  border: none;
+  background: #eee;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* title */
+.title20 {
+    font-size: 24px;
+  margin: 20px 0;
+    font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;
+    -webkit-text-stroke: 0.5 black; /* Stroke width and color */
+
+}
+
+/* tabs */
+.tabs20 {
+  display: flex;
+  gap: 20px;
+  color: #777;
+}
+
+.tab20 {
+  cursor: pointer;
+}
+
+.active20 {
+  color: #8bc34a;
+  border-bottom: 2px solid #8bc34a;
+}
+
+/* card */
+.card20 {
+  background: #ddd;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* icon */
+.icon20 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+
+.red20 {
+  color: red;
+}
+
+/* text */
+.name20 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.cardNum20 {
+  margin: 0;
+  font-weight: 300;
+  padding-top: 3%;
+}
+
+.amount20 {
+  font-size: 14px;
+}
