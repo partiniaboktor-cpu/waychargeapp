@@ -8,6 +8,100 @@
 
 }
 
+/* Slide Charge Now thumb to the right → /Connectplug */
+.home-charge-track {
+  position: relative;
+  width: 100%;
+  height: 65px;
+  background: linear-gradient(to right, #7cb342, #8bc34a);
+  border-radius: 35px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(124, 179, 66, 0.3);
+  overflow: hidden;
+  touch-action: pan-x;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+}
+
+.home-charge-track:active {
+  cursor: grabbing;
+}
+
+.home-charge-track.is-dragging {
+  cursor: grabbing;
+}
+
+.home-charge-label-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  padding-left: 48px;
+}
+
+.home-charge-label {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.45);
+  opacity: 0.95;
+  transition: opacity 0.2s ease;
+}
+
+.home-charge-track.is-dragging .home-charge-label {
+  opacity: 0.65;
+}
+
+.home-charge-hint {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.55);
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.home-charge-track.is-dragging .home-charge-hint {
+  opacity: 0.25;
+}
+
+.home-charge-thumb-wrap {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 55px;
+  height: 55px;
+  z-index: 2;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.home-charge-track.is-dragging .home-charge-thumb-wrap {
+  transition: none;
+}
+
+.home-charge-thumb {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.home-charge-thumb .bolt {
+  color: #8bc34a;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
 /* Header */
 .header7 {
   display: flex;
