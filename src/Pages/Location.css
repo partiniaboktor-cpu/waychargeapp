@@ -1,0 +1,135 @@
+.container23 {
+  max-width: 414px;
+  margin: auto;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+     height: 120vh;      /* full screen */
+  overflow-y: auto;   /* enable scroll */
+}
+
+/* Search */
+.search-row23 {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.search-input23 {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-small23 {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+/* Map */
+.map23 {
+  height: 220px;
+  border: 2px solid #8DC63F;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.map-text23 {
+  font-size: 18px;
+}
+
+.map-sub23 {
+  font-size: 14px;
+  color: gray;
+}
+
+/* Stations */
+.stations23 {
+  background: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.stations-title23 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Card */
+.station-card23 {
+  padding: 12px 0;
+  border-top: 1px solid #ddd;
+}
+
+.station-header23 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.station-name23 {
+  color: #8DC63F;
+  text-decoration: underline;
+  font-weight: 100;
+}
+
+/* Status */
+.status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.available23 {
+  border: 1px solid #8DC63F;
+  color: #6aa62f;
+}
+
+.full23 {
+  border: 1px solid red;
+  color: red;
+}
+
+/* Text */
+.rating23 {
+  margin: 5px 0;
+}
+
+.rating23 span {
+  color: #6aa62f;
+}
+
+.address23 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Info Row */
+.info-row23 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.map23 {
+  height: 220px;
+  border: 2px solid #8DC63F;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.map-frame23 {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

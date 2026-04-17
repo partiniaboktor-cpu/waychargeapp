@@ -20,6 +20,9 @@ import Visacard from './Pages/Visacard';
 import Notifications from './Pages/Paymenthistory';
 import Points from './Pages/Points';
 import Request from './Pages/Request';
+import Location from './Pages/Location';
+
+
 const RoutingApp = () => {
   return (
     <>
@@ -45,6 +48,7 @@ const RoutingApp = () => {
       <Route path='/Notifications' element={<Notifications /> } />
       <Route path='/Points' element={<Points /> } />
       <Route path='/Request' element={<Request /> } />
+      <Route path='/Location' element={<Location /> } />
 
     </Routes>
     </BrowserRouter>
