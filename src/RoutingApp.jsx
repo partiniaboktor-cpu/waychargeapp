@@ -23,6 +23,7 @@ import Request from './Pages/Request';
 import Location from './Pages/Location';
 import Profile from './Pages/Profile';
 import Requestconfirmation from './Pages/Requestconfirmation';
+import Paymentconfirmation from './Pages/Paymentconfirmation';
 
 
 const RoutingApp = () => {
@@ -53,6 +54,7 @@ const RoutingApp = () => {
       <Route path='/Location' element={<Location /> } />
       <Route path='/Profile' element={<Profile /> } />
       <Route path='/Requestconfirmation' element={<Requestconfirmation /> } />
+      <Route path='/Paymentconfirmation' element={<Paymentconfirmation /> } />
 
     </Routes>
     </BrowserRouter>
