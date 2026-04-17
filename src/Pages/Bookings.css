@@ -1,0 +1,112 @@
+.container27 {
+  max-width: 380px;
+  margin: auto;
+  padding: 15px;
+  font-family: Arial;
+
+  height: 140vh;
+  overflow-y: scroll;
+}
+
+.back27 {
+    background: #ffffff;
+  box-shadow: 10px 5px 10px #88888850;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.title27 {
+  margin: 10px 0;
+    font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;
+    -webkit-text-stroke: 0.5px black; /* Stroke width and color */
+
+}
+
+.tabs27 {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.active27 {
+  color: #8DC63F;
+  border-bottom: 2px solid #8DC63F;
+}
+
+.card27 {
+  background: #fff;
+  padding: 12px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.rowTop27 {
+  display: flex;
+  gap: 10px;
+}
+
+.img27 {
+  width: 65px;
+  height: 65px;
+  border-radius: 12px;
+}
+
+.gray27 {
+  color: gray;
+  font-size: 14px;
+}
+
+.flex27 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.time27 { 
+  background: #ffffff;
+  box-shadow: 10px 5px 10px #88888850;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  
+}
+
+.cancel27 {
+  background: #B45656;
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 35px;
+  font-size: 20px;
+}
+
+.btns27 {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.view27 {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+    background: #ffffff;
+  box-shadow: 10px 5px 10px #88888850;
+font-size: 20px;
+}
+
+.book27 {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background: #8DC63F;
+
+  box-shadow: 10px 5px 10px #88888850;
+  color: white;
+  font-size: 20px;
+}

@@ -24,6 +24,8 @@ import Location from './Pages/Location';
 import Profile from './Pages/Profile';
 import Requestconfirmation from './Pages/Requestconfirmation';
 import Paymentconfirmation from './Pages/Paymentconfirmation';
+import Bookings from './Pages/Bookings';
+import Bookcharger1 from './Pages/Bookcharger1';
 
 
 const RoutingApp = () => {
@@ -55,6 +57,8 @@ const RoutingApp = () => {
       <Route path='/Profile' element={<Profile /> } />
       <Route path='/Requestconfirmation' element={<Requestconfirmation /> } />
       <Route path='/Paymentconfirmation' element={<Paymentconfirmation /> } />
+      <Route path='/Bookings' element={<Bookings /> } />
+      <Route path='/Bookcharger1' element={<Bookcharger1 /> } />
 
     </Routes>
     </BrowserRouter>
