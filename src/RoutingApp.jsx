@@ -16,6 +16,7 @@ import Stopcharging from './Pages/Stopcharging';
 import Coffee from './Pages/Coffee';
 import Coffeedetail from './Pages/Coffeedetail';
 import Payment from './Pages/Payment';
+import Visacard from './Pages/Visacard';
 
 const RoutingApp = () => {
   return (
@@ -38,6 +39,7 @@ const RoutingApp = () => {
       <Route path='/Coffee' element={<Coffee /> } />
       <Route path='/Coffeedetail' element={<Coffeedetail /> } />
       <Route path='/Payment' element={<Payment /> } />
+      <Route path='/Visacard' element={<Visacard /> } />
 
     </Routes>
     </BrowserRouter>

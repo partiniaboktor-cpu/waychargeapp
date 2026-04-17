@@ -1,66 +1,106 @@
-.box16 {
-  padding: 20px;
-  font-family: sans-serif;
-  min-height: 100vh;
+body {
+  margin: 0;
+  font-family: Arial;
 }
 
-.title16 {
-  margin-bottom: 10px;
+.container17 {
+ max-width: 414px;
+  margin: auto;
+  padding: 2px 18px;
+
+  height: 110vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
 }
 
-.balance16 {
-  background: black;
+/* top */
+.top17 {
+  display: flex;
+  justify-content: space-between;
+  color: #888;
+}
+
+.link17 {
+  text-decoration: underline;
+}
+
+/* balance */
+.balance17 {
+  background: #1c1c1c;
   color: white;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+ 
 }
-
-.cost16 {
-  margin: 10px 0;
-  background: #ddd;
-  padding: 10px;
-  border-radius: 10px;
+.your{
+    font-weight: 200;
+    font-size: 16px ;
 }
-
-.sub16 {
-  margin-top: 15px;
+.nu{
+    padding-top: 10%;
 }
-
-.card16 {
-  background: white;
+.iconBox17 {
+  background: #8bc34a;
   padding: 12px;
+  border-radius: 12px;
+}
+
+/* cost */
+.cost17 {
+  background: #dddddd55;
+  box-shadow: 7px 5px 10px #b6b6b663;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.select{
+    padding: 5%;
+}
+/* cards */
+.card17 {
+  background: #dddddd55;
+  box-shadow: 7px 5px 10px #b6b6b663;
+  padding: 15px;
+  border-radius: 15px;
   margin-top: 10px;
-  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
 }
 
-.dot16 {
-  width: 15px;
-  height: 15px;
+.left17 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.img17 {
+  width: 40px;
+}
+
+/* radio */
+.radio17 {
+  width: 18px;
+  height: 18px;
   border: 2px solid black;
   border-radius: 50%;
 }
 
-.dot16.active16 {
+.on17 {
   background: black;
 }
 
-.add16 {
-  margin: 15px 0;
-  padding: 10px;
-  border: 2px dashed green;
+/* add */
+.add17 {
+  border: 2px dashed #8bc34a;
+  padding: 15px;
   text-align: center;
-  border-radius: 10px;
-  cursor: pointer;
+  border-radius: 15px;
+  margin: 15px 0;
+  color: #6a9f2b;
 }
 
-.btn16 {
-  width: 100%;
-  padding: 12px;
-  background: green;
-  color: white;
-  border: none;
-  border-radius: 10px;
-}
