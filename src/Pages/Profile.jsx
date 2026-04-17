@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Upper from '../Components/Upper';
 import './Profile.css'
+import bigimg from '../Assets/bigimg.png'
+import Nav from '../Components/Nav';
 
 const Profile = () => {
     return ( <>
@@ -9,7 +11,7 @@ const Profile = () => {
     <div className="container24">
       <div className="profileCard24">
         <img
-          src="https://via.placeholder.com/150"
+          src={bigimg}
           alt="profile"
           className="profileImage24"
         />
@@ -49,6 +51,7 @@ const Profile = () => {
       <div className="card24 deleteCard24">
         <span className="deleteText24">🗑 Delete account</span>
       </div>
+      <Nav />
     </div>
     
     </> );

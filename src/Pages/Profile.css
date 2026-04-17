@@ -2,9 +2,8 @@
   max-width: 400px;
   margin: auto;
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
   padding: 20px;
-  height: 100vh;
+  height: 115vh;
   overflow-y: scroll;
 }
 
