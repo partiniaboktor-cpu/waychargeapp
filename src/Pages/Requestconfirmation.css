@@ -3,13 +3,28 @@
   margin: auto;
   font-family: Arial, sans-serif;
   padding: 20px;
-  height: 115vh;
+  height: 100vh;
   overflow-y: scroll;
+  display: flex;
+  padding-top: 50%;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+gap: 3%;
 }
 .tick{
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
-    
+}
+.message25{
+    /* font-weight: 200; */
+    font-size: 24px;
+    text-align: center;
+}
+.description25{
+    text-align: center;
+    color: #22222264;
+    line-height: 130%;
 }
