@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './login.css';
 import logo from '../Assets/logo.svg'
 import battery from '../Assets/mobile-battery.svg'
@@ -7,6 +8,7 @@ import Upper from "../Components/Upper";
 const Home = () => {
 
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
 
     return (  <>
 
@@ -50,7 +52,13 @@ const Home = () => {
         </div>
 
         {/* Button */}
-        <button className="btn-login">Sign In</button>
+        <button
+          type="button"
+          className="btn-login"
+          onClick={() => navigate("/Verfication")}
+        >
+          Sign In
+        </button>
 
         {/* Divider */}
         <div className="divider">

@@ -4,12 +4,14 @@ import './Charging.css'
 import car2 from '../Assets/car2.png'
 import Button from '../Components/Button';
 import Nav from '../Components/Nav';
+import { useNavigate } from 'react-router-dom';
 
 const Charging = () => {
-    return ( <>
-    
+  const navigate = useNavigate();
+  return (<>
+
     <Upper />
-     <div className="status-container13">
+    <div className="status-container13">
 
       <h2 className="car-title13">EQS SUV</h2>
       <p className="car-subtitle13">Mercedec Benz coupet</p>
@@ -42,17 +44,17 @@ const Charging = () => {
         Charger seems bored here... have a coffee and enjoy the experience
       </p>
 
-      <button className="coffee-btn13">
-        ⚡ Grab your coffee
-      </button>
+      <div style={{ marginBottom: '15px', width: '100%', maxWidth: '350px' }}>
+        <Button word='Grab your coffee' onSwipeComplete={() => navigate('/Coffee')} />
+      </div>
 
-  <Button word='Stop Charging' />
+      <Button word='Stop Charging' />
 
-<Nav />
+      <Nav />
     </div>
 
-    
-    </> );
+
+  </>);
 }
- 
+
 export default Charging;
