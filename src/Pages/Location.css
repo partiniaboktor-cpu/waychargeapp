@@ -2,6 +2,7 @@
   max-width: 414px;
   margin: auto;
   padding: 15px;
+  padding-bottom: calc(15px + 88px + env(safe-area-inset-bottom, 0px));
   font-family: Arial, sans-serif;
      height: 120vh;      /* full screen */
   overflow-y: auto;   /* enable scroll */

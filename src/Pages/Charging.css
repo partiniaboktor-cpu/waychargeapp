@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  padding-bottom: calc(20px + 88px + env(safe-area-inset-bottom, 0px));
   font-family: Segoe UI;
 
   overflow-y: auto;

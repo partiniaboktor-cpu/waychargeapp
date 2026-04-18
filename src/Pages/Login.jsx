@@ -69,7 +69,16 @@ const Home = () => {
 
         {/* Signup */}
         <p className="signup">
-          Don't have an account? <a href="#">Sign up</a>
+          Don't have an account?{" "}
+          <a
+            href="/CreateAcc"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/CreateAcc");
+            }}
+          >
+            Sign up
+          </a>
         </p>
 
         {/* Help */}

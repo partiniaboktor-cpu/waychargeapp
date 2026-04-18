@@ -184,8 +184,6 @@ const Home = () => {
         <img className="map-thumb7" src={map} alt="map" />
       </div>
 
-      <Nav />
-
 <div className="container9">
 
       {/* MISSIONS */}
@@ -239,6 +237,8 @@ const Home = () => {
       </div>
 
     </div>
+
+      <Nav />
 
     </div>
 

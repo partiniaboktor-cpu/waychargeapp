@@ -2,7 +2,8 @@
   min-height: 100vh;
   padding: 20px;
   font-family: 'Segoe UI', sans-serif;
-  padding-bottom: 100px;
+  /* Space for fixed bottom nav (~80px) + gap above scroll end */
+  padding-bottom: calc(104px + env(safe-area-inset-bottom, 0px));
 
   overflow-y: auto;
 

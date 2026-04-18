@@ -15,6 +15,20 @@ const ITEMS = [
   { path: "/Profile", label: "Profile", icon: profile },
 ];
 
+/** Routes where the bottom "Charger" tab should appear active (green). */
+const CHARGER_FLOW_PATHS = new Set([
+  "/Connectplug",
+  "/Selectcharger",
+  "/Chargertypes",
+  "/Charging",
+  "/Stopcharging",
+  "/Coffee",
+  "/Payment",
+  "/PaymentHistory",
+  "/Location",
+  "/Bookcharger1",
+]);
+
 const Nav = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,7 +38,10 @@ const Nav = () => {
     <nav className="bottom-nav8" aria-label="Main">
       {ITEMS.map(({ path, label, icon }) => {
         const normalized = path.replace(/\/$/, "") || "/";
-        const isActive = pathname === normalized;
+        const isChargerTab = normalized === "/Connectplug";
+        const isActive = isChargerTab
+          ? CHARGER_FLOW_PATHS.has(pathname)
+          : pathname === normalized;
         return (
           <button
             key={path}

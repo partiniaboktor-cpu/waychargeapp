@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './CreateAcc.css'
 import Upper from '../Components/Upper';
 import logo from '../Assets/logo.svg'
 
 const CreateAcc = () => {
 
+const navigate = useNavigate();
 const [showPass, setShowPass] = useState(false);
 const [showConfirm, setShowConfirm] = useState(false);
 
@@ -94,7 +96,13 @@ const [showConfirm, setShowConfirm] = useState(false);
       </div>
 
       {/* Button */}
-      <button className="btn2">Sign Up</button>
+      <button
+        type="button"
+        className="btn2"
+        onClick={() => navigate("/Addcar")}
+      >
+        Sign Up
+      </button>
 
       {/* Divider */}
       <div className="divider2">

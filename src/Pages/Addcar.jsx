@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Addcar.css'
 import Upper from '../Components/Upper';
 import logo from '../Assets/logo.svg'
 import Button from '../Components/Button';
 
 const Addcar = () => {
+    const navigate = useNavigate();
     return ( <>
     
     <Upper />
@@ -63,7 +65,7 @@ const Addcar = () => {
       </div>
 
       {/* Button */}
-     <Button word='Next' />
+     <Button word='Next' onSwipeComplete={() => navigate('/Selectcharger')} />
 
     </div>
     

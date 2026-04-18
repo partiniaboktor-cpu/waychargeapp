@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Pushlocation.css'
 import Upper from "../Components/Upper";
 import logo from '../Assets/logo.svg'
@@ -6,6 +7,7 @@ import loc from '../Assets/loc.svg'
 import Button from '../Components/Button';
 
 const Pushlocation = () => {
+    const navigate = useNavigate();
     return ( <>
     
     <Upper />
@@ -28,8 +30,10 @@ const Pushlocation = () => {
 
         {/* Action Section */}
         <div className="actions5">
-       <Button 
-       word='Allow location Access' />
+       <Button
+       word='Allow location Access'
+       onSwipeComplete={() => navigate('/Pushnotification')}
+       />
        
           
           <button className="cancel-button5">

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Bookcharger1.css'
 import Uppernav from '../Components/Uppernav';
+import Nav from '../Components/Nav';
 import bookcharger1 from '../Assets/bookcharger1.png'
 
 
@@ -112,6 +113,8 @@ const Bookcharger1 = () => {
       </div>
 
     </div>
+
+    <Nav />
     
     </> );
 }

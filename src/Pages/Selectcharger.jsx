@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './Selectcharger.css'
 import Upper from '../Components/Upper';
 import logo from '../Assets/logo.svg'
 import Button from "../Components/Button";
+import Nav from "../Components/Nav";
 
 const Selectcharger = () => {
 
+    const navigate = useNavigate();
     const [selected4, setSelected4] = useState('Type 2');
 
     const options4 = [
@@ -51,9 +54,11 @@ const Selectcharger = () => {
           The system shows only compatible chargers.
         </p>
 
-         <Button word='Next' />
+         <Button word='Next' onSwipeComplete={() => navigate('/Pushlocation')} />
       </div>
     </div>
+
+    <Nav />
     
     </> );
 }

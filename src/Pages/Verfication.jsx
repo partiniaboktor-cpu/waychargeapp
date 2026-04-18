@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './Verfication.css'
 import Upper from '../Components/Upper';
 import logo from '../Assets/logo.svg'
 
 const Verfication = () => {
 
+  const navigate = useNavigate();
   const [code, setCode] = useState(["", "", "", "", "", ""]);
 
   const handleChange = (value, index) => {
@@ -27,7 +29,20 @@ const Verfication = () => {
     
      <div className="container1">
       
-      <div className="back1">← Back</div>
+      <div
+        className="back1"
+        role="button"
+        tabIndex={0}
+        onClick={() => navigate("/Login")}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            navigate("/Login");
+          }
+        }}
+      >
+        ← Back
+      </div>
 
       <div className="iconBox1">
         ⚡
@@ -55,7 +70,13 @@ const Verfication = () => {
         ))}
       </div>
 
-      <button className="btn1">Verify</button>
+      <button
+        type="button"
+        className="btn1"
+        onClick={() => navigate("/Addcar")}
+      >
+        Verify
+      </button>
 
       <p className="resend1">
         Didn’t receive the code? <span>Resend</span>
