@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import './Chargertypes.css'
 import Uppernav from '../Components/Uppernav';
@@ -9,8 +9,32 @@ import ch4 from '../Assets/ch4.png'
 import ch5 from '../Assets/ch5.png'
 import ch6 from '../Assets/ch6.png'
 import Nav from '../Components/Nav';
+import { supabase } from "../Supabase";
 
 const Chargertypes = () => {
+
+
+const [Chargertype, setChargertype] = useState([]);
+useEffect(() => {
+
+  async function getChargertypeAPI() {
+    const { data, error } = await supabase
+      .from("Chargertype")
+      .select("*");
+
+    if (error) {
+      console.log(error);
+    } else {
+      setChargertype(data);
+      console.log(data);
+    }
+  }
+
+  getChargertypeAPI();
+
+}, []);
+
+
     const navigate = useNavigate();
     const goCharging = () => navigate('/Charging');
     const cardKeyDown = (e) => {
