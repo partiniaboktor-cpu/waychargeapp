@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Uppernav from '../Components/Uppernav';
 import './Visacard.css'
 import visa3 from '../Assets/visa3.svg'
@@ -7,6 +8,7 @@ import Button from "../Components/Button";
 import Nav from "../Components/Nav";
 
 const Visacard = () => {
+  const navigate = useNavigate();
 
 const [toggle, setToggle] = useState({
     glass: false,
@@ -79,7 +81,7 @@ const [toggle, setToggle] = useState({
       </div>
 
       {/* BUTTON */}
-      <Button word='Validate card' />
+      <Button word="Validate card" onSwipeComplete={() => navigate('/Payment')} />
 <Nav />
     </div>
 

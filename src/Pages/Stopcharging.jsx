@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Upper from '../Components/Upper';
 import './Stopcharging.css'
 import chargingsuccessful from '../Assets/chargingsuccessful.svg'
@@ -7,6 +8,7 @@ import Nav from '../Components/Nav';
 
 
 const Stopcharging = () => {
+    const navigate = useNavigate();
     return ( <>
     
     <Upper />
@@ -34,7 +36,10 @@ const Stopcharging = () => {
 
       {/* Action Button Section */}
       <div className="footer-action10">
-        <Button word='Swipe to Chckout' />
+        <Button
+          word="Swipe to checkout"
+          onSwipeComplete={() => navigate('/Payment')}
+        />
       </div>
       <Nav />
     </div>

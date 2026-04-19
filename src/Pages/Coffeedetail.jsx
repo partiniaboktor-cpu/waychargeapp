@@ -1,15 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Coffeedetail.css'
 import Uppernav from '../Components/Uppernav';
 import bigcoffee from '../Assets/bigcoffee.png'
+import { Link } from "react-router-dom";
 
 const Coffeedetail = () => {
+    const navigate = useNavigate();
     return ( <>
     
     <Uppernav />
 
 <div className="container15">
-      <button className="backBtn15">← Back</button>
+<Link to="/coffee">
+  <button className="backBtn15">← Back</button>
+</Link>
 
       <div className="imageWrapper15">
         <img
@@ -46,7 +51,9 @@ const Coffeedetail = () => {
             <span className="divider15">|</span>
             <span className="points15">300 Points</span>
           </div>
-          <button className="buyBtn15">Buy now</button>
+          <button type="button" className="buyBtn15" onClick={() => navigate('/Stopcharging')}>
+            Buy now
+          </button>
         </div>
       </div>
     </div>

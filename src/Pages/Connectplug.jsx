@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Upper from '../Components/Upper';
 import './Connectplug.css'
 import Nav from '../Components/Nav'
-import button from '../Components/Button'
 import plug from '../Assets/plug.svg'
 import Button from '../Components/Button';
 
 
 
 const Connectplug = () => {
+    const navigate = useNavigate();
     return ( <>
     
     <Upper />
@@ -47,7 +48,10 @@ const Connectplug = () => {
 
       {/* Action Button Section */}
       <div className="footer-action10">
-        <Button word='Connect Plague' />
+        <Button
+          word='Connect Plague'
+          onSwipeComplete={() => navigate('/Chargertypes')}
+        />
       </div>
       <Nav />
     </div>

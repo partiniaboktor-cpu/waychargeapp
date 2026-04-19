@@ -11,6 +11,7 @@ import charger1 from '../Assets/charger1.png'
 import charger2 from '../Assets/charger2.png'
 import booking from '../Assets/booking1.png'
 import Uppernav from '../Components/Uppernav';
+import { Link } from "react-router-dom";
 
 const THUMB = 55;
 const TRACK_PAD = 5;
@@ -170,7 +171,9 @@ const Home = () => {
       {/* Nearby Stations */}
       <div className="section-header7">
         <h3 className="section-title7">Nearby Charging stations</h3>
-        <span className="view-all7">View all</span>
+        <Link to="/locations" className="view-all7">
+  View all
+</Link>
       </div>
 
       <div className="station-card7">

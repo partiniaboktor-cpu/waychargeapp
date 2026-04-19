@@ -33,7 +33,7 @@
   font-weight: 600;
   flex-grow: 1;
   margin-right: 20px;
-   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.599);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.599);
 }
 
 /* Swipe-to-confirm (drag handle right) */
@@ -72,4 +72,38 @@
 
 .allow-button5--swipe .bolt-icon-wrapper5--swipe:active {
   cursor: grabbing;
+}
+
+/* Outline swipe — dashed track, dark thumb */
+.allow-button5.allow-button5--swipe.allow-button5--swipe-outline {
+  background: linear-gradient(180deg, #ffffff 0%, #f4faf0 100%);
+  border: 2px dashed rgba(107, 159, 56, 0.85);
+  box-shadow:
+    0 2px 14px rgba(124, 179, 66, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  border-radius: 36px;
+}
+
+.allow-button5--swipe-outline .button-text5--swipe-outline {
+  color: #4a7c23;
+  font-weight: 700;
+  font-size: 1.08rem;
+  letter-spacing: 0.03em;
+  text-shadow: none;
+  padding: 0 20px 0 80px;
+}
+
+.allow-button5--swipe-outline .bolt-icon-wrapper5--outline-thumb {
+  background: linear-gradient(145deg, #353535 0%, #1c1c1c 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.allow-button5--swipe-outline .bolt-icon-wrapper5--outline-thumb .bolt5 {
+  color: #dfff4a;
+  text-shadow: 0 0 12px rgba(200, 255, 80, 0.45);
+  filter: drop-shadow(0 0 2px rgba(180, 255, 60, 0.4));
 }

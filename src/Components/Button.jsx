@@ -4,7 +4,7 @@ import "./Button.css";
 const THUMB = 55;
 const PAD = 5;
 
-const Button = ({ word, onSwipeComplete, onClick }) => {
+const Button = ({ word, onSwipeComplete, onClick, variant = "solid" }) => {
   const trackRef = useRef(null);
   const [offset, setOffset] = useState(0);
   const offsetRef = useRef(0);
@@ -12,6 +12,7 @@ const Button = ({ word, onSwipeComplete, onClick }) => {
   const completedRef = useRef(false);
 
   const swipeMode = typeof onSwipeComplete === "function";
+  const outlineSwipe = variant === "outline" && swipeMode;
 
   const maxOffset = () => {
     const el = trackRef.current;
@@ -82,13 +83,17 @@ const Button = ({ word, onSwipeComplete, onClick }) => {
   return (
     <div
       ref={trackRef}
-      className="allow-button5 allow-button5--swipe"
+      className={`allow-button5 allow-button5--swipe${outlineSwipe ? " allow-button5--swipe-outline" : ""}`}
       role="presentation"
       aria-label={`${word}: drag the handle to the right to confirm`}
     >
-      <span className="button-text5 button-text5--swipe">{word}</span>
+      <span
+        className={`button-text5 button-text5--swipe${outlineSwipe ? " button-text5--swipe-outline" : ""}`}
+      >
+        {word}
+      </span>
       <div
-        className="bolt-icon-wrapper5 bolt-icon-wrapper5--swipe"
+        className={`bolt-icon-wrapper5 bolt-icon-wrapper5--swipe${outlineSwipe ? " bolt-icon-wrapper5--outline-thumb" : ""}`}
         style={{ transform: `translateX(${offset}px)` }}
         onPointerDown={onThumbPointerDown}
         onPointerMove={onThumbPointerMove}

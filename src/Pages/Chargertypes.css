@@ -1,79 +1,76 @@
-
-.container12{
-width:414px;
-margin:auto;
-font-family:Arial;
-padding:10px 5px;
-height:500px; 
-overflow-y:scroll;
-
+.container12 {
+  width: 414px;
+  margin: auto;
+  font-family: Arial;
+  padding: 10px 5px;
+  height: 500px;
+  overflow-y: scroll;
 }
 
-.title12{
-font-size:14px;
-font-weight:bold;
-color:#555;
-margin-bottom:10px;
-font-family: "Aboreto", system-ui;
-font-weight: 400;
-font-style: normal;
--webkit-text-stroke: 0.5px black; /* Stroke width and color */
-
+.title12 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+  font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-text-stroke: 0.5px black;
 }
 
-.sectionHeader12{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-top:15px;
-margin-bottom:10px;
+.sectionHeader12 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
-.extra12{
-font-size:16px;
-color:#777777a8;
-text-decoration: underline;
-
+.extra12 {
+  font-size: 16px;
+  color: #777777a8;
+  text-decoration: underline;
 }
 
-.card12{
-display:flex;
-align-items:center;
-background:white;
-border-radius:14px;
-padding:10px;
-margin-bottom:10px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
+.card12 {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 14px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
-.active12{
-border:2px solid #8DC63F;
+.active12 {
+  border: 2px solid #8dc63f;
 }
 
-.image12{
-width:55px;
-height:55px;
-border-radius:10px;
-margin-right:12px;
+.image12 {
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+  margin-right: 12px;
 }
 
-.info12{
-flex:1;
+.info12 {
+  flex: 1;
 }
 
-.type12{
-margin:0;
-font-size:18px;
+.type12 {
+  margin: 0;
+  font-size: 18px;
 }
 
-.power12{
-margin:0;
-color:#777;
-font-size:14px;
+.power12 {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
 }
 
-.side12{
-font-size:14px;
-color:#8DC63F;
-font-weight:500;
+.side12 {
+  font-size: 14px;
+  color: #8dc63f;
+  font-weight: 500;
 }

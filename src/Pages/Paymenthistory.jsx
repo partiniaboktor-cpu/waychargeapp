@@ -4,6 +4,7 @@ import Uppernav from '../Components/Uppernav';
 import Nav from "../Components/Nav";
 import no from '../Assets/no.svg'
 import download from '../Assets/download.svg'
+import { Link } from "react-router-dom";
 
 const Notifications = () => {
 
@@ -14,7 +15,9 @@ const Notifications = () => {
     <Uppernav />
     <div className="container20">
       
-      <button className="back20">← Back</button>
+    <Link to="/payment">
+  <button className="back20">← Back</button>
+</Link>
 
       <h1 className="title20">MY TRANSACTIONS</h1>
 

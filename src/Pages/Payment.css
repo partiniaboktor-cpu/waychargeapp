@@ -95,13 +95,10 @@ body {
   background: black;
 }
 
-/* add */
-.add17 {
-  border: 2px dashed #8bc34a;
-  padding: 15px;
-  text-align: center;
-  border-radius: 15px;
-  margin: 15px 0;
-  color: #6a9f2b;
+/* Swipe "Add card" row */
+.payment-swipe-row17 {
+  width: 100%;
+  max-width: 360px;
+  margin: 15px auto;
 }
 

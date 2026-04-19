@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Uppernav from '../Components/Uppernav';
 import './Payment.css'
 import visa1 from '../Assets/visa1.svg'
@@ -8,8 +9,10 @@ import visa4 from '../Assets/visa4.svg'
 import Button from "../Components/Button";
 import wallet from '../Assets/wallet.svg';
 import Nav from "../Components/Nav";
-const Payment = () => {
+import { Link } from "react-router-dom";
 
+const Payment = () => {
+     const navigate = useNavigate();
      const [active, setActive] = useState(2);
 
   const methods = [
@@ -29,7 +32,9 @@ const Payment = () => {
 
       <div className="top17">
         <span>My Transactions</span>
-        <span className="link17">View all</span>
+        <Link to="/paymenthistory" className="link17">
+  View all
+</Link>
       </div>
 
       <div className="balance17">
@@ -62,11 +67,15 @@ const Payment = () => {
         </div>
       ))}
 
-      <div className="add17">
-        ⚡ Add New Crad
+      <div className="payment-swipe-row17">
+        <Button
+          word="Add card"
+          variant="outline"
+          onSwipeComplete={() => navigate('/Visacard')}
+        />
       </div>
 
-      <Button word='Confirm' />
+      <Button word="Confirm" onSwipeComplete={() => navigate('/Paymentconfirmation')} />
 <Nav />
     </div>
     
