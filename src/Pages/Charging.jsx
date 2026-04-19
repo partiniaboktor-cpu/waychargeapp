@@ -39,7 +39,7 @@ const Charging = () => {
           Charger seems bored here... have a coffee and enjoy the experience
         </p>
 
-        <div style={{ marginBottom: '15px', width: '100%', maxWidth: '350px' }}>
+        <div style={{ width: '100%', maxWidth: '350px' }}>
           <Button
             word="Grab your coffee"
             variant="outline"

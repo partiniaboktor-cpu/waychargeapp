@@ -20,13 +20,6 @@ const Home = () => {
 
    <Uppernav />
     <div className="main-container7">
-      {/* Charge Now Button */}
-      <button 
-        className="home-charge-btn-simple" 
-        onClick={() => navigate('/Connectplug')}
-      >
-        Charge Now
-      </button>
 
       {/* Promo Card */}
       <div className="promo-card7">
@@ -142,6 +135,14 @@ const Home = () => {
       </div>
 
     </div>
+
+      {/* Charge Now Button */}
+      <button 
+        className="home-charge-btn-simple" 
+        onClick={() => navigate('/Connectplug')}
+      >
+        Charge Now
+      </button>
 
       <Nav />
 

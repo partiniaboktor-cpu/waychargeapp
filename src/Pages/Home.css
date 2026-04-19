@@ -121,7 +121,6 @@
   position: relative;
   margin-bottom: 30px;
   overflow: visible;
-  margin-top: 5%;
 }
 
 .brand-name7 {
@@ -148,6 +147,14 @@
   width: 280px;
   right: -20px;
   bottom: -20px;
+  filter: drop-shadow(-12px 18px 12px rgba(0, 0, 0, 0.5));
+  transform: perspective(1000px) rotateY(-10deg) translateZ(20px);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+}
+
+.promo-card7:hover .car-image7 {
+  transform: perspective(1000px) rotateY(-5deg) translateZ(40px) scale(1.05);
+  filter: drop-shadow(-20px 25px 15px rgba(0, 0, 0, 0.6));
 }
 
 /* Stats */
@@ -217,8 +224,18 @@
   color: #666;
 }
 
-.stat-footer7 { color: #bbb; font-size: 0.75rem; text-align: center; }
-.stat-footer-dark7 { color: #888; font-size: 0.75rem; text-align: center; }
+.stat-footer7 { 
+  color: #bbb; 
+  font-size: 0.75rem;
+   text-align: center; 
+  }
+
+.stat-footer-dark7 { 
+  color: #888; 
+  font-size: 0.75rem;
+   text-align: center; 
+   padding-top: 20%;
+  }
 
 /* Nearby */
 .section-header7 {
