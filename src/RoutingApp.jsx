@@ -29,6 +29,7 @@ import Requestconfirmation from "./Pages/Requestconfirmation";
 import Paymentconfirmation from "./Pages/Paymentconfirmation";
 import Bookings from "./Pages/Bookings";
 import Bookcharger1 from "./Pages/Bookcharger1";
+import Paymentrequired from "./Pages/Paymentrequired";
 
 const RoutingApp = () => {
   return (
@@ -64,6 +65,8 @@ const RoutingApp = () => {
           <Route path="/Paymentconfirmation" element={<Paymentconfirmation />} />
           <Route path="/Bookings" element={<Bookings />} />
           <Route path="/Bookcharger1" element={<Bookcharger1 />} />
+          <Route path="/Paymentrequired" element={<Paymentrequired />} />
+
         </Routes>
       </BrowserRouter>
     </>

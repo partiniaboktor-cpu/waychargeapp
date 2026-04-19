@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css'
 import car from '../Assets/car.png'
@@ -13,124 +13,20 @@ import booking from '../Assets/booking1.png'
 import Uppernav from '../Components/Uppernav';
 import { Link } from "react-router-dom";
 
-const THUMB = 55;
-const TRACK_PAD = 5;
-
 const Home = () => {
     const navigate = useNavigate();
-    const trackRef = useRef(null);
-    const maxXRef = useRef(0);
-    const dragXRef = useRef(0);
-    const pointerStartX = useRef(0);
-    const dragStartOffset = useRef(0);
-    const [dragX, setDragX] = useState(0);
-    const [isDragging, setIsDragging] = useState(false);
-
-    const measure = useCallback(() => {
-        const el = trackRef.current;
-        if (!el) return;
-        const w = el.clientWidth;
-        maxXRef.current = Math.max(0, w - TRACK_PAD * 2 - THUMB);
-        setDragX((x) => {
-            const n = Math.min(x, maxXRef.current);
-            dragXRef.current = n;
-            return n;
-        });
-    }, []);
-
-    useLayoutEffect(() => {
-        measure();
-        const el = trackRef.current;
-        if (!el || typeof ResizeObserver === 'undefined') return undefined;
-        const ro = new ResizeObserver(() => measure());
-        ro.observe(el);
-        return () => ro.disconnect();
-    }, [measure]);
-
-    const clamp = useCallback((x) => {
-        const m = maxXRef.current;
-        return Math.max(0, Math.min(x, m));
-    }, []);
-
-    const onPointerDown = (e) => {
-        if (e.button !== undefined && e.button !== 0) return;
-        pointerStartX.current = e.clientX;
-        dragStartOffset.current = dragXRef.current;
-        setIsDragging(true);
-        e.currentTarget.setPointerCapture(e.pointerId);
-    };
-
-    const onPointerMove = (e) => {
-        if (!e.currentTarget.hasPointerCapture(e.pointerId)) return;
-        const delta = e.clientX - pointerStartX.current;
-        const next = clamp(dragStartOffset.current + delta);
-        dragXRef.current = next;
-        setDragX(next);
-    };
-
-    const onPointerUp = (e) => {
-        if (!e.currentTarget.hasPointerCapture(e.pointerId)) return;
-        e.currentTarget.releasePointerCapture(e.pointerId);
-        setIsDragging(false);
-        const x = dragXRef.current;
-        const max = maxXRef.current;
-        const threshold = max * 0.55;
-        if (max > 0 && x >= threshold) {
-            navigate('/Connectplug');
-            return;
-        }
-        dragXRef.current = 0;
-        setDragX(0);
-    };
-
-    const onPointerCancel = (e) => {
-        if (e.currentTarget.hasPointerCapture(e.pointerId)) {
-            e.currentTarget.releasePointerCapture(e.pointerId);
-        }
-        setIsDragging(false);
-        dragXRef.current = 0;
-        setDragX(0);
-    };
 
     return ( <>
 
    <Uppernav />
     <div className="main-container7">
-      {/* Slide the bolt handle right to go to Charger */}
-      <div
-        ref={trackRef}
-        className={`home-charge-track ${isDragging ? 'is-dragging' : ''}`}
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerCancel}
-        role="slider"
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-valuenow={
-            dragX > 0 && maxXRef.current > 0
-                ? Math.round((dragX / maxXRef.current) * 100)
-                : 0
-        }
-        aria-label="Charge now, slide right to open charger"
+      {/* Charge Now Button */}
+      <button 
+        className="home-charge-btn-simple" 
+        onClick={() => navigate('/Connectplug')}
       >
-        <div className="home-charge-label-wrap">
-          <span className="home-charge-label">Charge Now</span>
-        </div>
-        <span className="home-charge-hint" aria-hidden>
-          →
-        </span>
-        <div
-          className="home-charge-thumb-wrap"
-          style={{ transform: `translateX(${dragX}px)` }}
-        >
-          <div className="home-charge-thumb">
-            <span className="bolt" aria-hidden>
-              ⚡
-            </span>
-          </div>
-        </div>
-      </div>
+        Charge Now
+      </button>
 
       {/* Promo Card */}
       <div className="promo-card7">

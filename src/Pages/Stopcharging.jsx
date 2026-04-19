@@ -37,7 +37,7 @@ const Stopcharging = () => {
       {/* Action Button Section */}
       <div className="footer-action10">
         <Button
-          word="Swipe to checkout"
+          word="Checkout"
           onSwipeComplete={() => navigate('/Payment')}
         />
       </div>
