@@ -60,13 +60,13 @@
   font-style: normal;
 }
 .description5 {
-  color: #b0b0b0;
-  font-size: 1rem;
+  color: #b0b0b082;
+    font-size: 18px;
   margin-bottom: auto;
 }
 
 .actions5 {
-  margin-top: 200px; /* Spacer to match layout */
+  margin-top: 150px; /* Spacer to match layout */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -115,10 +115,10 @@
 .cancel-button5 {
   background: none;
   border: none;
-  color: #b0b0b0;
-  font-size: 1rem;
+  color: #b0b0b075;
+  font-size: 18px;
   cursor: pointer;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .cancel-button5:hover {

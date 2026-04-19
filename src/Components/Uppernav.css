@@ -6,7 +6,7 @@
   align-content: center;
   flex-direction: row;
   max-width: 414px; 
-  gap: 30%;
+  gap: 35%;
 }
 .left-nav{
   display: flex;

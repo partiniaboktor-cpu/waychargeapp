@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Uppernav.css'
 import myimg from '../Assets/myimg.png'
 import noti from '../Assets/noti.svg'
@@ -13,7 +14,9 @@ const Uppernav = () => {
     <img className='myimg' src={myimg }alt="myimg" />
     <h2 className='name'> Partinia Boktor</h2>
     </div>
-    <img src={not} alt="notifications" />
+    <Link to="/Notifications">
+      <img src={not} alt="notifications" />
+    </Link>
   </div>
 
   </div>

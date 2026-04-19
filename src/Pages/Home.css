@@ -240,11 +240,16 @@
 /* Nearby */
 .section-header7 {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-bottom: 15px;
+  gap: 7%;
 }
 
-.view-all7 { color: #aaa; text-decoration: underline; font-size: 0.9rem; }
+.view-all7 {
+   color: #aaa; 
+  text-decoration: underline; 
+  font-size: 18px;
+ }
 
 .station-card7 {
   background: white;
@@ -272,7 +277,7 @@
 }
 
 .container9 {
-  padding: 20px;
+  padding: 10px;
   font-family: sans-serif;
 
 }
@@ -286,15 +291,91 @@
     font-family: "Aboreto", system-ui;
   font-weight: 400;
   font-style: normal;
+  margin-top: 8%;
 }
 
+.card30 {
+  width: 380px;
+  background: #ffffff92;
+  border-radius: 25px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.top30 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftTop30 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.iconBox30 {
+  width: 55px;
+  height: 55px;
+  background: #ececec8c;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon30 {
+  width: 25px;
+}
+
+.title30 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+
+.map30 {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.bottom30 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text30 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+}
+
+.btn30 {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  background: #ececec8c;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn30:hover {
+  background: #ddd;
+}
 .view-all9 {
   color: #22222285;
   font-size: 14px;
   cursor: pointer;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 /* Missions */
@@ -317,7 +398,7 @@
 }
 
 .points9 {
-  color: #888;
+  color: #888888b1;
   margin-top: 5px;
   border-bottom: 1px solid #ccc;
   display: inline-block;
@@ -350,7 +431,7 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  color: #333;
+  color: #3333336f;
 }
 
 /* Status */

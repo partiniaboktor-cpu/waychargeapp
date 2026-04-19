@@ -25,7 +25,7 @@ const Pushnotification = () => {
         {/* Text Section */}
         <h1 className="main-title5">Notifications?</h1>
         <p className="description5">
-          Allow WayCharge to access your location?
+          Allow WayCharge to send you Notifications?
         </p>
 
         {/* Action Section */}

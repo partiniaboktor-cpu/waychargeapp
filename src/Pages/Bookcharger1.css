@@ -7,7 +7,8 @@
 }
 
 .back28 {
-  background: #ddd;
+    background: #ffffff;
+  box-shadow: 10px 5px 10px #88888850;
   border: none;
   padding: 5px 12px;
   border-radius: 15px;

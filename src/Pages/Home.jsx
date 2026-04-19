@@ -60,21 +60,33 @@ const Home = () => {
       {/* Nearby Stations */}
       <div className="section-header7">
         <h3 className="section-title7">Nearby Charging stations</h3>
-        <Link to="/Location" className="view-all7">
+        <Link to="/Location"  className="view-all9">
   View all
 </Link>
       </div>
 
-      <div className="station-card7">
-        <div className="station-info7">
-          <img className="loc-icon7" src={location} alt="location-icon" />
-          <div>
-            <p className="station-name7">Nearest Station</p>
-            <p className="station-desc7">Also city parking garage</p>
+     <div className="card30">
+      
+      <div className="top30">
+        <div className="leftTop30">
+          <div className="iconBox30">
+            <img src={location} alt="location" className="icon30" />
           </div>
+          <h2 className="title30">Nearest Station</h2>
         </div>
-        <img className="map-thumb7" src={map} alt="map" />
+
+        <img src={map} alt="map" className="map30" />
       </div>
+
+      <div className="bottom30">
+        <p className="text30">
+          Also city parking garage, <br /> Nasr city
+        </p>
+
+        <button className="btn30">Get directions</button>
+      </div>
+
+    </div>
 
 <div className="container9">
 
