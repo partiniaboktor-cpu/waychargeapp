@@ -171,7 +171,7 @@ const Home = () => {
       {/* Nearby Stations */}
       <div className="section-header7">
         <h3 className="section-title7">Nearby Charging stations</h3>
-        <Link to="/locations" className="view-all7">
+        <Link to="/Location" className="view-all7">
   View all
 </Link>
       </div>
@@ -192,7 +192,9 @@ const Home = () => {
       {/* MISSIONS */}
       <div className="section-header9">
         <h2>MISSIONS</h2>
-        <span className="view-all9">View all</span>
+        <Link to="/points">
+  <span className="view-all9">View all</span>
+</Link>
       </div>
 
       <div className="missions9">
@@ -212,7 +214,9 @@ const Home = () => {
       {/* BOOKINGS */}
       <div className="section-header9">
         <h2>BOOKINGS</h2>
-        <span className="view-all9">View all</span>
+        <Link to="/bookings" className="view-all9">
+  View all
+</Link>
       </div>
 
       <div className="booking-card9">
@@ -235,7 +239,9 @@ const Home = () => {
       </div>
 
       <div className="actions9">
-        <button className="view-btn9">View</button>
+      <Link to="/bookcharger1">
+  <button className="view-btn9">View</button>
+</Link>
         <button className="book-btn9">Book Again</button>
       </div>
 

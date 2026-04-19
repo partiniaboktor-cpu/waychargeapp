@@ -3,6 +3,7 @@ import './Bookcharger1.css'
 import Uppernav from '../Components/Uppernav';
 import Nav from '../Components/Nav';
 import bookcharger1 from '../Assets/bookcharger1.png'
+import { Link } from "react-router-dom";
 
 
 const Bookcharger1 = () => {
@@ -12,7 +13,9 @@ const Bookcharger1 = () => {
 
        <div className="container28">
 
-      <button className="back28">← Back</button>
+       <Link to="/bookings">
+  <button className="back28">← Back</button>
+</Link>
 
       <h2 className="title28">REVIEW SUMMARY</h2>
 

@@ -3,6 +3,7 @@ import './Bookings.css'
 import Uppernav from '../Components/Uppernav';
 import book1 from '../Assets/book1.png'
 import Nav from '../Components/Nav';
+import { Link } from "react-router-dom";
 
 const Bookings = () => {
 
@@ -13,7 +14,9 @@ const Bookings = () => {
    
   <div className="container27">
       
-      <button className="back27">← Back</button>
+  <Link to="/Home">
+  <button className="back27">← Back</button>
+</Link>
 
       <h2 className="title27">MY BOOKINGS</h2>
 
@@ -49,7 +52,9 @@ const Bookings = () => {
           </div>
 
           <div className="btns27">
-            <button className="view27">View</button>
+          <Link to="/bookcharger1">
+  <button className="view27">View</button>
+</Link>
             <button className="book27">Book Again</button>
           </div>
 
