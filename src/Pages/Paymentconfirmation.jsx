@@ -18,8 +18,8 @@ const Paymentconfirmation = () => {
 
 
      <Link  to="/home">
-  <Button word='Go to Home' />
-</Link>
+         <Button word='Go to Home' />
+     </Link>
 
     </div>
     
