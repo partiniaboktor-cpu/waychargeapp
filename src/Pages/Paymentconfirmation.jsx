@@ -3,6 +3,7 @@ import './Paymentconfirmation.css'
 import Upper from '../Components/Upper';
 import tick from '../Assets/tick.svg'
 import Button from '../Components/Button';
+import { Link } from "react-router-dom";
 
 const Paymentconfirmation = () => {
     return ( <>
@@ -16,7 +17,9 @@ const Paymentconfirmation = () => {
     <p className='description25'>Your Payment has been confirmed. Thank you for<br></br> choosing us! We look forward to seeing you again <br></br>soon with WayCharge ⚡</p>
 
 
-     <Button word='Go to Home' />
+     <Link  to="/home">
+  <Button word='Go to Home' />
+</Link>
 
     </div>
     

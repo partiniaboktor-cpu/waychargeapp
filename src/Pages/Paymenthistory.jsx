@@ -1,14 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './Paymenthistory.css'
 import Uppernav from '../Components/Uppernav';
 import Nav from "../Components/Nav";
 import no from '../Assets/no.svg'
 import download from '../Assets/download.svg'
 import { Link } from "react-router-dom";
+import { supabase } from '../Supabase';
 
 const Notifications = () => {
+    const [transactions, setTransactions] = useState([]);
 
+    useEffect(() => {
+        async function fetchData() {
+            const { data, error } = await supabase.from('transactions-app').select('*').order('id', { ascending: true });
+            if (!error && data) {
+                setTransactions(data);
+            }
+        }
+        fetchData();
+    }, []);
 
+    const displayTransactions = transactions.length > 0 ? transactions : [
+        { id: 't1', amount: '-12.49', currency: 'LE', card_type: 'MasterCard', card_last_digits: '****2345', status: 'Completed', isRed: false },
+        { id: 't2', amount: '-12.49', currency: 'LE', card_type: 'MasterCard', card_last_digits: '****2345', status: 'Failed', isRed: true },
+        { id: 't3', amount: '-12.49', currency: 'LE', card_type: 'MasterCard', card_last_digits: '****2345', status: 'Completed', isRed: false },
+        { id: 't4', amount: '-12.49', currency: 'LE', card_type: 'MasterCard', card_last_digits: '****2345', status: 'Completed', isRed: false },
+        { id: 't5', amount: '-12.49', currency: 'LE', card_type: 'MasterCard', card_last_digits: '****2345', status: 'Failed', isRed: true },
+        { id: 't6', amount: '-12.49', currency: 'LE', card_type: 'MasterCard', card_last_digits: '****2345', status: 'Failed', isRed: true }
+    ];
 
     return ( <>
     
@@ -27,64 +46,25 @@ const Notifications = () => {
         <span className="tab20">Deposit of funds</span>
       </div>
 
-      {/* Card 1 */}
-      <div className="card20">
-        <img className="icon20 green20" src={download} alt="download" />
-        <div>
-          <p className="name20">Partinia Boktor</p>
-          <h3 className="cardNum20">MasterCard ****2345</h3>
-        </div>
-        <span className="amount20">-12.49 LE</span>
-      </div>
+      {displayTransactions.map((item) => {
+        const isRed = item.isRed !== undefined ? item.isRed : (item.status === 'Failed' || item.amount < 0);
+        
+        return (
+          <div className="card20" key={item.id}>
+            <img 
+              className={`icon20 ${isRed ? 'red20' : 'green20'}`} 
+              src={isRed ? no : download} 
+              alt={isRed ? "no" : "download"} 
+            />
+            <div>
+              <p className="name20">Partinia Boktor</p>
+              <h3 className="cardNum20">{item.card_type} {item.card_last_digits}</h3>
+            </div>
+            <span className="amount20">{item.amount} {item.currency}</span>
+          </div>
+        );
+      })}
 
-      {/* Card 2 */}
-      <div className="card20">
-        <img className="icon20 red20" src={no} alt="no" />
-        <div>
-          <p className="name20">Partinia Boktor</p>
-          <h3 className="cardNum20">MasterCard ****2345</h3>
-        </div>
-        <span className="amount20">-12.49 LE</span>
-      </div>
-
-      {/* Card 3 */}
-      <div className="card20">
-        <img className="icon20 green20" src={download} alt="download" />
-        <div>
-          <p className="name20">Partinia Boktor</p>
-          <h3 className="cardNum20">MasterCard ****2345</h3>
-        </div>
-        <span className="amount20">-12.49 LE</span>
-      </div>
-
-      {/* Card 4 */}
-      <div className="card20">
-        <img className="icon20 green20" src={download} alt="download" />
-        <div>
-          <p className="name20">Partinia Boktor</p>
-          <h3 className="cardNum20">MasterCard ****2345</h3>
-        </div>
-        <span className="amount20">-12.49 LE</span>
-      </div>
-
-      {/* Card 5 */}
-      <div className="card20">
-        <img className="icon20 red20" src={no} alt="no" />
-        <div>
-          <p className="name20">Partinia Boktor</p>
-          <h3 className="cardNum20">MasterCard ****2345</h3>
-        </div>
-        <span className="amount20">-12.49 LE</span>
-      </div>
-
-          <div className="card20">
-        <img className="icon20 red20" src={no} alt="no" />
-        <div>
-          <p className="name20">Partinia Boktor</p>
-          <h3 className="cardNum20">MasterCard ****2345</h3>
-        </div>
-        <span className="amount20">-12.49 LE</span>
-      </div>
 <Nav />
     </div>
 
