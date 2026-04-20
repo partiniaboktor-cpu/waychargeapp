@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import './Home.css'
 import car from '../Assets/car.png'
 import Nav from '../Components/Nav';
@@ -11,10 +11,39 @@ import charger1 from '../Assets/charger1.png'
 import charger2 from '../Assets/charger2.png'
 import booking from '../Assets/booking1.png'
 import Uppernav from '../Components/Uppernav';
-import { Link } from "react-router-dom";
+import { supabase } from '../Supabase';
 
 const Home = () => {
     const navigate = useNavigate();
+    const [pageData, setPageData] = useState(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            const { data, error } = await supabase.from('home-app').select('*').eq('id', 1).single();
+            if (!error && data) {
+                setPageData(data);
+            }
+        }
+        fetchData();
+    }, []);
+
+    const d = pageData || {
+        car_model: 'MercedesBenz',
+        battery: '73',
+        range_km: '83',
+        time_remaining: '1h.34m',
+        station_name: 'city parking garage',
+        station_location: 'Nasr city',
+        charging_type: 'Fast charging',
+        points: '1600',
+        charger_location: 'Cairo , Egypt',
+        charger_name: 'Green Volt hub',
+        power_kwh: '420',
+        price: '120',
+        booking_time: '09:00 AM',
+        booking_date: 'Nov 16, 2023',
+        booking_status: 'Cancelled'
+    };
 
     return ( <>
 
@@ -24,7 +53,7 @@ const Home = () => {
       {/* Promo Card */}
       <div className="promo-card7">
         <div className="promo-content7">
-          <p className="brand-name7">MercedesBenz</p>
+          <p className="brand-name7">{d.car_model}</p>
           <h2 className="promo-title7">EFFORTLESS PARKING & CHARG=GING</h2>
         </div>
         <img src={car} alt="Car" className="car-image7" />
@@ -39,7 +68,7 @@ const Home = () => {
             <span className="stat-label7">Battery</span>
           </div>
           <div className="progress-bar-bg7">
-            <div className="progress-fill7" style={{ width: '73%' }}>73%</div>
+            <div className="progress-fill7" style={{ width: `${d.battery}%` }}>{d.battery}%</div>
           </div>
           <p className="stat-footer7">Power saving mode</p>
         </div>
@@ -50,8 +79,8 @@ const Home = () => {
             <span className="stat-label-dark7">Remaining</span>
           </div>
           <div className="distance-row7">
-            <span className="distance-val7">83Km</span>
-            <span className="time-tag7">1h.34m</span>
+            <span className="distance-val7">{d.range_km}Km</span>
+            <span className="time-tag7">{d.time_remaining}</span>
           </div>
           <p className="stat-footer-dark7">Remaining distance & time</p>
         </div>
@@ -80,7 +109,7 @@ const Home = () => {
 
       <div className="bottom30">
         <p className="text30">
-          Also city parking garage, <br /> Nasr city
+          Also {d.station_name}, <br /> {d.station_location}
         </p>
 
         <button className="btn30">Get directions</button>
@@ -107,8 +136,8 @@ const Home = () => {
 
         <div className="mission-card9">
           <img src={charger2} alt="fast charging" className="mission-img9" />
-          <h4>Fast charging</h4>
-          <p className="points9">1600 points</p>
+          <h4>{d.charging_type}</h4>
+          <p className="points9">{d.points} points</p>
         </div>
       </div>
 
@@ -124,19 +153,19 @@ const Home = () => {
         <img src={booking} alt="booking" className="booking-img9" />
 
         <div className="booking-info9">
-          <p className="location9">Cairo , Egypt</p>
-          <h3>Green Volt hub</h3>
+          <p className="location9">{d.charger_location}</p>
+          <h3>{d.charger_name}</h3>
 
           <div className="booking-details9">
-            <span>420 KWh</span>
-            <span>120 LE</span>
+            <span>{d.power_kwh} KWh</span>
+            <span>{d.price} LE</span>
           </div>
         </div>
       </div>
 
       <div className="booking-status9">
-        <span>09:00 AM &nbsp; Nov 16, 2023</span>
-        <button className="cancelled9">Cancelled</button>
+        <span>{d.booking_time} &nbsp; {d.booking_date}</span>
+        <button className="cancelled9">{d.booking_status}</button>
       </div>
 
       <div className="actions9">
