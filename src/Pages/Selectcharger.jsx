@@ -95,7 +95,7 @@ const Selectcharger = () => {
       </div>
     </div>
 
-    <Nav />
+    
     
     </> );
 }
