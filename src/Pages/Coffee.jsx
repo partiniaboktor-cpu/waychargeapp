@@ -78,7 +78,7 @@ const Coffee = () => {
                 ))}
             </div>
 
-            <footer className="footerCart14">
+            {/* <footer className="footerCart14">
                 <div className="cartSummary14">
                     <div className="cartCountRow14">
                         <div className="countCircle14">{cart.length}</div>
@@ -92,7 +92,7 @@ const Coffee = () => {
                 >
                     Confirm
                 </button>
-            </footer>
+            </footer> */}
 
             <Nav />
         </div>
