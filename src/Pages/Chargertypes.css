@@ -1,76 +1,230 @@
 .container12 {
-  width: 414px;
+  max-width: 414px;
   margin: auto;
-  font-family: Arial;
-  padding: 10px 5px;
-  height: 500px;
-  overflow-y: scroll;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: #ffffff;
+  padding: 0 20px 40px;
+  min-height: 100vh;
+  overflow-y: auto;
 }
 
-.title12 {
-  font-size: 14px;
-  font-weight: bold;
-  color: #555;
+/* Header */
+.header12 {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
   margin-bottom: 10px;
-  font-family: "Aboreto", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  -webkit-text-stroke: 0.5px black;
 }
 
-.sectionHeader12 {
+.header12 h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.backBtn12, .infoBtn12 {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+}
+
+.intro12 {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  display: block;
+}
+
+/* Charger Cards */
+.chargerList12 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chargerCard12 {
+  background-color: #fff;
+  border: 1.5px solid #eee;
+  border-radius: 24px;
+  padding: 20px;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.chargerCard12.popular12 {
+  border-color: #8dc63f;
+  border-width: 2px;
+}
+
+.popularBadge12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #8dc63f;
+  color: white;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 0;
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+}
+
+.cardHeader12 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.cardIconBox12 {
+  width: 48px;
+  height: 48px;
+  background-color: #f7f7f7;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.popular12 .cardIconBox12 {
+  background-color: #f0f7e6;
+  color: #8dc63f;
+}
+
+.cardTitleInfo12 {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle12 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.cardSub12 {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Grid Specs */
+.specGrid12 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.specBox12 {
+  background-color: #f7f7f7;
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.popular12 .specBox12 {
+  background-color: #f0f7e6;
+}
+
+.specLabel12 {
+  font-size: 11px;
+  color: #888;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.specVal12 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.popular12 .specVal12 {
+  color: #8dc63f;
+}
+
+/* Time Box */
+.timeBox12 {
+  background-color: #f7f7f7;
+  border-radius: 16px;
+  padding: 12px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.extra12 {
-  font-size: 16px;
-  color: #777777a8;
-  text-decoration: underline;
+.popular12 .timeBox12 {
+  background-color: #f0f7e6;
 }
 
-.card12 {
+.timeLabel12 {
+  font-size: 13px;
+  color: #666;
+}
+
+.timeVal12 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.popular12 .timeVal12 {
+  color: #8dc63f;
+}
+
+/* Recommendation */
+.recRow12 {
   display: flex;
   align-items: center;
-  background: white;
-  border-radius: 14px;
-  padding: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #666;
 }
 
-.active12 {
-  border: 2px solid #8dc63f;
+.recIcon12 {
+  color: #aaa;
 }
 
-.image12 {
-  width: 55px;
-  height: 55px;
-  border-radius: 10px;
-  margin-right: 12px;
-}
-
-.info12 {
-  flex: 1;
-}
-
-.type12 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.power12 {
-  margin: 0;
-  color: #777;
-  font-size: 14px;
-}
-
-.side12 {
-  font-size: 14px;
+.popular12 .recIcon12 {
   color: #8dc63f;
-  font-weight: 500;
+}
+
+/* Actions */
+.cardBtn12 {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnOutline12 {
+  background-color: #f7f7f7;
+  color: #1a1a1a;
+}
+
+.btnSolid12 {
+  background-color: #8dc63f;
+  color: white;
+}
+
+.cardBtn12:active {
+  transform: scale(0.98);
 }
