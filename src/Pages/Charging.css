@@ -1,107 +1,272 @@
-
-.status-container13{
-  height: 120vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  padding-bottom: calc(20px + 88px + env(safe-area-inset-bottom, 0px));
-  font-family: Segoe UI;
-
+.status-container13 {
+  max-width: 414px;
+  margin: auto;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: #ffffff;
+  padding-bottom: 40px;
+  min-height: 140vh;
   overflow-y: auto;
 }
 
-.car-title13{
-margin-top:10px;
-font-size:24px;
-font-weight:bold;
-font-family: Arial, Helvetica, sans-serif;
+/* Green Header Section */
+.charging-header13 {
+  background-color: #8dc63f;
+  color: white;
+  padding: 20px 20px 30px;
+  text-align: center;
+  position: relative;
 }
 
-.car-subtitle13{
-color:#888;
-margin-bottom:20px;
-font-family: Arial, Helvetica, sans-serif;
-font-size: 16px;
+.charging-top-nav13 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
-.circle-wrapper13{
-display:flex;
-justify-content:center;
-align-items:center;
-margin:20px 0;
+.charging-top-nav13 h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
 }
 
-.progress-circle13{
-width:260px;
-height:260px;
-border-radius:50%;
-border:20px solid #8bc34a;
-border-left-color:#e0e0e0;
-border-top-color:#e0e0e0;
-display:flex;
-justify-content:center;
-align-items:center;
-background:white;
+.back-btn13, .info-btn13 {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.car-image13{
-width:160px;
-border-radius:10px;
+.battery-icon-large13 {
+  margin-bottom: 20px;
+  opacity: 0.9;
 }
 
-.charging-text13{
-font-size:24px;
-font-weight:bold;
-margin:20px 0;
-font-family: Arial, Helvetica, sans-serif;
+.battery-percent13 {
+  font-size: 72px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
 }
 
-.info-card13{
-display:flex;
-justify-content:space-between;
-background:white;
-border-radius:15px;
-padding:20px;
-width:90%;
-max-width:350px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-border:2px solid #8DC63F;
-font-family: Arial, Helvetica, sans-serif;
+.battery-label13 {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-top: 5px;
+  display: block;
+  margin-bottom: 30px;
 }
 
-.info-item13{
-text-align:left;
+.header-stats13 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
 
-.info-label13{
-color:#777;
-margin:0;
+.glass-card13 {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 15px 10px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.info-value13{
-margin:5px 0 0 0;
-font-weight:bold;
+.glass-label13 {
+  font-size: 12px;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 4px;
 }
 
-.message13{
-color:#777;
-margin:25px 0;
-text-align:center;
-max-width:320px;
-font-family: Arial, Helvetica, sans-serif;
+.glass-value13 {
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.coffee-btn13{
-width:100%;
-max-width:350px;
-padding:15px;
-border:2px dashed #8DC63F;
-background:transparent;
-color:#8DC63F;
-font-size:18px;
-border-radius:30px;
-margin-bottom:15px;
-cursor:pointer;
+/* Content Area */
+.charging-content13 {
+  padding: 20px;
+  margin-top: -10px;
 }
 
+.content-card13 {
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+/* Station Row */
+.station-row13 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.pin-icon-box13 {
+  width: 45px;
+  height: 45px;
+  background-color: #f0f7e6;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8dc63f;
+}
+
+.station-info13 h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 2px 0;
+  color: #1a1a1a;
+}
+
+.station-info13 p {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+/* Detail Rows */
+.detail-row13 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.detail-row13:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label13 {
+  color: #888;
+}
+
+.detail-value13 {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Cost Breakdown */
+.cost-title13 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.total-row13 {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.total-value13 {
+  color: #8dc63f;
+}
+
+/* Progress Section */
+.progress-header13 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.target-text13 { color: #1a1a1a; }
+.complete-text13 { color: #8dc63f; }
+
+.progress-bar-bg13 {
+  background-color: #eee;
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill13 {
+  background-color: #8dc63f;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* Rewards Box */
+.rewards-box13 {
+  background-color: #f0f7e6;
+  border: 1px solid #d4e9b8;
+  border-radius: 18px;
+  padding: 15px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.star-icon13 {
+  color: #8dc63f;
+}
+
+.rewards-content13 {
+  display: flex;
+  flex-direction: column;
+}
+
+.rewards-title13 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #4a5d31;
+}
+
+.rewards-text13 {
+  font-size: 12px;
+  color: #6a7d51;
+  margin: 0;
+}
+
+/* Footer Actions */
+.footer-nav13 {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.nav-item13 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stop-btn13 {
+  width: calc(100% - 40px);
+  margin: 0 20px;
+  border: 2px solid #ff5252;
+  background: none;
+  border-radius: 30px;
+  padding: 15px;
+  color: #ff5252;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
