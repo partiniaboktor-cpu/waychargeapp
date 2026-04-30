@@ -6,7 +6,6 @@ import Login from "./Pages/Login";
 import Verfication from "./Pages/Verfication";
 import CreateAcc from "./Pages/CreateAcc";
 import Addcar from "./Pages/Addcar";
-import Selectcharger from "./Pages/Selectcharger";
 import Pushlocation from "./Pages/pushlocation";
 import Pushnotification from "./Pages/Pushnotification";
 import Scan from "./Pages/Scan";
@@ -43,7 +42,6 @@ const RoutingApp = () => {
           <Route path="/Verfication" element={<Verfication />} />
           <Route path="/CreateAcc" element={<CreateAcc />} />
           <Route path="/Addcar" element={<Addcar />} />
-          <Route path="/Selectcharger" element={<Selectcharger />} />
           <Route path="/Pushlocation" element={<Pushlocation />} />
           <Route path="/Pushnotification" element={<Pushnotification />} />
           <Route path="/Scan" element={<Scan />} />

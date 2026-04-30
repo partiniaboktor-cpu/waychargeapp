@@ -1,118 +1,268 @@
 .container21 {
   max-width: 414px;
   margin: auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #ffffff, #e9f5df);
-
-   height: 120vh;      /* full screen */
-  overflow-y: auto;   /* enable scroll */
+  font-family: 'Inter', -apple-system, sans-serif;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding-bottom: 100px;
 }
 
-/* Title */
-.title21 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 20px;
-      font-family: "Aboreto", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Points Card */
-.points-card21 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 2px solid #8DC63F;
-  border-radius: 15px;
-  padding: 15px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.points-left21 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.coin21 {
-  font-size: 22px;
-}
-
-/* Icons */
-.icons21 {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 25px;
-}
-
-.icon-item21 {
+/* Green Header */
+.points-header21 {
+  background-color: #8dc63f;
+  color: white;
+  padding: 20px 20px 30px;
   text-align: center;
 }
 
-.icon-item21 img {
-  width: 70px;
-  height: 70px;
-  border-radius: 20px;
-}
-
-/* Discover */
-.discover21 {
+.points-top-nav21 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f3f3f3;
-  padding: 15px;
-  border-radius: 15px;
   margin-bottom: 25px;
-  
 }
 
-.discover-text21 h2 {
+.points-top-nav21 h1 {
   font-size: 20px;
-    font-family: "Aboreto", system-ui;
-  font-weight: 400;
-  font-style: normal;
+  font-weight: 600;
+  margin: 0;
 }
 
-.discover21 img {
-  width: 70px;
-}
-
-/* Missions */
-.missions-title21 {
+.back-btn21, .info-btn21 {
+  background: none;
+  border: none;
+  color: white;
   font-size: 20px;
-  margin-bottom: 15px;
-      font-family: "Aboreto", system-ui;
-  font-weight: 400;
-  font-style: normal;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.missions-grid21 {
+.balance-label21 {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.balance-value21 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: 5px 0;
+  display: block;
+}
+
+.balance-unit21 {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 25px;
+  display: block;
+}
+
+/* Membership Progress */
+.membership-box21 {
+  margin-top: 10px;
+}
+
+.membership-labels21 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.progress-bar-bg21 {
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill21 {
+  background-color: white;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* Stats Cards */
+.stats-row21 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
+  padding: 20px;
+  margin-top: -15px;
 }
 
-.mission-card21 {
+.stat-card21 {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 18px;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
-.mission-card21 img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 10px;
+.stat-value21 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 4px;
 }
 
-.mission-card21 h4 {
-  font-size: 14px;
+.stat-value21.green {
+  color: #8dc63f;
 }
 
-.mission-card21 p {
+.stat-label21 {
+  font-size: 13px;
+  color: #888;
+  font-weight: 500;
+}
+
+/* Section Common */
+.section-title21 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 25px 20px 15px;
+}
+
+/* Rewards List */
+.rewards-list21 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 20px;
+}
+
+.reward-card21 {
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.reward-icon-box21 {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8dc63f;
+  flex-shrink: 0;
+}
+
+.reward-info21 {
+  flex: 1;
+}
+
+.reward-name21 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.reward-desc21 {
   font-size: 12px;
-  color: gray;
+  color: #888;
+  display: block;
+  margin-bottom: 6px;
 }
+
+.reward-points21 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #8dc63f;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.redeem-btn21 {
+  background-color: #8dc63f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.redeem-btn21.locked {
+  background-color: #e0e0e0;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.lock-badge21 {
+  position: absolute;
+  top: 15px;
+  right: 110px;
+  color: #aaa;
+}
+
+/* Activity List */
+.activity-list21 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.activity-item21 {
+  background-color: #f7f7f7;
+  border-radius: 18px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.activity-icon-box21 {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.activity-icon-box21.green { color: #8dc63f; }
+.activity-icon-box21.orange { color: #f9a825; }
+
+.activity-content21 {
+  flex: 1;
+}
+
+.activity-title21 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  display: block;
+}
+
+.activity-time21 {
+  font-size: 12px;
+  color: #888;
+}
+
+.activity-points21 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.activity-points21.plus { color: #8dc63f; }
+.activity-points21.minus { color: #888; }
