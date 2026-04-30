@@ -1,67 +1,252 @@
-
-.container14{
- padding:20px;
-  font-family:Arial;
-  height: 210vh;
-  overflow-y:auto;
-
+.container14 {
+  max-width: 414px;
+  margin: auto;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: #ffffff;
+  padding: 0 0 280px; /* space for footer + nav bar */
+  min-height: 100vh;
+  overflow-y: auto;
 }
 
-.back14{
-background:#eee;
-border:none;
-padding:8px 15px;
-border-radius:20px;
+/* Header */
+.header14 {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.title14{
-margin-top:10px;
-  font-family: "Aboreto", system-ui;
-  font-weight: 400;
-  font-style: normal;
-    -webkit-text-stroke: 0.5 black; /* Stroke width and color */
-
+.header14 h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+  text-align: center;
 }
 
-.tabs14{
-display:flex;
-gap:15px;
-margin:15px 0;
+.backBtn14, .searchBtn14 {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
 }
 
-.active14{
-color: #8DC63F;
-border-bottom:2px solid #8DC63F;
+/* Promo Banner */
+.promoBanner14 {
+  background-color: #8dc63f;
+  margin: 0 20px 20px;
+  padding: 12px 15px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
 }
 
-.grid14{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
+.promoText14 {
+  font-size: 13px;
+  font-weight: 600;
 }
 
-.card14{
-text-align:center;
-cursor: pointer;
+/* Category Tabs */
+.tabsScroll14 {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0 20px 20px;
+  display: flex;
+  gap: 10px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
-.img14{
-width:100%;
-border-radius:10px;
+.tabsScroll14::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 
-.details14{
-font-size:14px;
-text-decoration:underline;
-color:#555;
+.tabChip14 {
+  background-color: #f5f5f5;
+  color: #666;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.popular14{
-margin-top: 10%;
-padding-bottom: 10%;
+.tabChip14.active {
+  background-color: #8dc63f;
+  color: white;
 }
 
-.popular-img14{
-width:100%;
-border-radius:15px;
+/* Drink List */
+.drinkList14 {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.drinkCard14 {
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.drinkIconBox14 {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid #f0f0f0;
+}
+
+.drinkIcon14 {
+  color: #8dc63f;
+}
+
+.drinkInfo14 {
+  flex: 1;
+}
+
+.drinkTitleRow14 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2px;
+}
+
+.drinkName14 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.freeBadge14 {
+  background-color: #e8f5e9;
+  color: #8dc63f;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.drinkDesc14 {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.drinkPrice14 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.addBtn14 {
+  background-color: #8dc63f;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.addBtn14:active {
+  transform: scale(0.95);
+}
+
+/* Footer Cart */
+.footerCart14 {
+  position: fixed;
+  bottom: 115px; /* sits just above the floating nav bar */
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  border-top: 1px solid #eee;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+.cartSummary14 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartCountRow14 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.countCircle14 {
+  background-color: #8dc63f;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartLabel14 {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.cartTotal14 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.confirmBtn14 {
+  width: 100%;
+  background-color: #e0e0e0;
+  color: #999;
+  border: none;
+  border-radius: 30px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: not-allowed;
+  transition: all 0.2s ease;
+}
+
+.confirmBtn14.active {
+  background-color: #8dc63f;
+  color: white;
+  cursor: pointer;
 }

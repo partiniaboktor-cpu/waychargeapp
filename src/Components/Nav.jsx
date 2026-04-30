@@ -23,10 +23,18 @@ const CHARGER_FLOW_PATHS = new Set([
   "/Charging",
   "/Stopcharging",
   "/Coffee",
+  "/Coffeedetail",
   "/Payment",
+  "/Visacard",
   "/PaymentHistory",
   "/Location",
   "/Bookcharger1",
+  "/Bookings",
+  "/Scan",
+  "/Paymentconfirmation",
+  "/Paymentrequired",
+  "/Pushlocation",
+  "/Pushnotification"
 ]);
 
 const Nav = () => {

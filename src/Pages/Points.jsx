@@ -42,13 +42,6 @@ const Points = () => {
     const LockIcon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>;
     const CheckIcon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>;
 
-    if (loading) {
-        return (
-            <div className="container21" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <div className="loader">Loading...</div>
-            </div>
-        );
-    }
 
     return (
         <div className="container21">
@@ -96,7 +89,7 @@ const Points = () => {
                             <StarIcon /> 500 pts
                         </div>
                     </div>
-                    <button className="redeem-btn21">Redeem</button>
+                    <button className="redeem-btn21" onClick={() => navigate('/Coffee')}>Redeem</button>
                 </div>
 
                 <div className="reward-card21">
@@ -108,7 +101,7 @@ const Points = () => {
                             <StarIcon /> 800 pts
                         </div>
                     </div>
-                    <button className="redeem-btn21">Redeem</button>
+                    <button className="redeem-btn21" onClick={() => navigate('/Coffee')}>Redeem</button>
                 </div>
 
                 <div className="reward-card21">

@@ -1,92 +1,102 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Uppernav from '../Components/Uppernav';
-import './Coffee.css'
-import cappucino from '../Assets/cappucino.png'
-import latte from '../Assets/latte.png'
-import saltedcaramel from '../Assets/salted caramel.png'
-import tea from '../Assets/tea.png'
-import matcha from '../Assets/matcha.png'
-import lemon from '../Assets/lemon.png'
+import './Coffee.css';
 import Nav from '../Components/Nav';
-import coffees from '../Assets/coffees.png'
-import { supabase } from '../Supabase';
 
 const Coffee = () => {
     const navigate = useNavigate();
-    const goDetail = () => navigate('/Coffeedetail');
-    const [drinks, setDrinks] = useState([]);
+    
+    // State
+    const [cart, setCart] = useState([]);
+    const [category, setCategory] = useState('All Drinks');
 
-    useEffect(() => {
-        async function fetchData() {
-            const { data, error } = await supabase.from('drinks-app').select('*').order('id', { ascending: true });
-            if (!error && data) {
-                setDrinks(data);
-            }
-        }
-        fetchData();
-    }, []);
+    // Icons
+    const BackIcon = () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>;
+    const SearchIcon = () => <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>;
+    const StarIcon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>;
+    const CoffeeIcon = () => <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"></path><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="2" x2="6" y2="4"></line><line x1="10" y1="2" x2="10" y2="4"></line><line x1="14" y1="2" x2="14" y2="4"></line></svg>;
+    const IcedIcon = () => <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 21a4 4 0 0 1-4-4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12a4 4 0 0 1-4 4H7z"></path><path d="M7 3v18"></path><path d="M17 3v18"></path><path d="M3 13h18"></path><circle cx="12" cy="8" r="1" fill="currentColor"></circle><circle cx="9" cy="10" r="1" fill="currentColor"></circle><circle cx="15" cy="10" r="1" fill="currentColor"></circle></svg>;
 
-    const defaultDrinks = [
-        { id: 'd1', name: 'Cappuccino', button_text: 'View details', image: cappucino },
-        { id: 'd2', name: 'Latte', button_text: 'View details', image: latte },
-        { id: 'd3', name: 'Ice salted caramel', button_text: 'View details', image: saltedcaramel },
-        { id: 'd4', name: 'Tea', button_text: 'View details', image: tea },
-        { id: 'd5', name: 'Matcha', button_text: 'View details', image: matcha },
-        { id: 'd6', name: 'Lemonade', button_text: 'View details', image: lemon }
+    const drinks = [
+        { id: 1, name: 'Espresso', desc: 'Rich and bold single shot', price: 3.50, category: 'Hot', isFree: true },
+        { id: 2, name: 'Cappuccino', desc: 'Espresso with steamed milk foam', price: 4.50, category: 'Hot', isFree: false },
+        { id: 3, name: 'Latte', desc: 'Espresso with steamed milk', price: 4.75, category: 'Hot', isFree: true },
+        { id: 4, name: 'Americano', desc: 'Espresso with hot water', price: 3.75, category: 'Hot', isFree: false },
+        { id: 5, name: 'Iced Coffee', desc: 'Cold brew over ice', price: 4.25, category: 'Iced', isFree: true },
+        { id: 6, name: 'Mocha', desc: 'Espresso with chocolate & milk', price: 5.25, category: 'Hot', isFree: false }
     ];
 
-    const displayDrinks = drinks.length > 0 ? drinks : defaultDrinks;
+    const categories = ['All Drinks', 'Hot', 'Iced', 'Specialty'];
 
-    return ( <>
-    
-    <Uppernav />
-    
-    <div className="container14">
+    const addToCart = (item) => {
+        setCart([...cart, item]);
+    };
 
-      <button type="button" className="back14" onClick={() => navigate('/Charging')}>
-        ← Back
-      </button>
+    const total = cart.reduce((acc, curr) => acc + curr.price, 0).toFixed(2);
 
-      <h1 className="title14">GRAB YOUR COFFEE</h1>
+    return (
+        <div className="container14">
+            <header className="header14">
+                <button className="backBtn14" onClick={() => navigate(-1)}><BackIcon /></button>
+                <h1>WayCharge Café</h1>
+                <button className="searchBtn14"><SearchIcon /></button>
+            </header>
 
-      <div className="tabs14">
-        <span className="active14">All</span>
-        <span>Hot coffee</span>
-        <span>Cold coffee</span>
-        <span>Offers</span>
-      </div>
-
-      <div className="grid14">
-        {displayDrinks.map((item) => (
-            <div
-              key={item.id}
-              className="card14"
-              role="button"
-              tabIndex={0}
-              onClick={goDetail}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  goDetail();
-                }
-              }}
-            >
-              <img src={item.image} className="img14" alt={item.name} />
-              <p>{item.name}</p>
-              <span className="details14">{item.button_text || 'View details'}</span>
+            <div className="promoBanner14">
+                <StarIcon />
+                <span className="promoText14">Free drink with your charging session!</span>
             </div>
-        ))}
-      </div>
 
-      <h2 className="popular14">Popular</h2>
+            <div className="tabsScroll14">
+                {categories.map((cat) => (
+                    <button 
+                        key={cat} 
+                        className={`tabChip14 ${category === cat ? 'active' : ''}`}
+                        onClick={() => setCategory(cat)}
+                    >
+                        {cat}
+                    </button>
+                ))}
+            </div>
 
-      <img src={coffees} className="popular-img14" alt="" />
-      <Nav />
+            <div className="drinkList14">
+                {drinks.filter(d => category === 'All Drinks' || d.category === category).map((drink) => (
+                    <div className="drinkCard14" key={drink.id}>
+                        <div className="drinkIconBox14">
+                            {drink.category === 'Iced' ? <IcedIcon /> : <CoffeeIcon />}
+                        </div>
+                        <div className="drinkInfo14">
+                            <div className="drinkTitleRow14">
+                                <span className="drinkName14">{drink.name}</span>
+                                {drink.isFree && <span className="freeBadge14">Free</span>}
+                            </div>
+                            <span className="drinkDesc14">{drink.desc}</span>
+                            <span className="drinkPrice14">${drink.price.toFixed(2)}</span>
+                        </div>
+                        <button className="addBtn14" onClick={() => addToCart(drink)}>Add</button>
+                    </div>
+                ))}
+            </div>
 
-    </div>
+            <footer className="footerCart14">
+                <div className="cartSummary14">
+                    <div className="cartCountRow14">
+                        <div className="countCircle14">{cart.length}</div>
+                        <span className="cartLabel14">Items in cart</span>
+                    </div>
+                    <span className="cartTotal14">${total}</span>
+                </div>
+                <button 
+                    className={`confirmBtn14 ${cart.length > 0 ? 'active' : ''}`}
+                    onClick={() => cart.length > 0 && navigate('/Coffeedetail')}
+                >
+                    Confirm
+                </button>
+            </footer>
 
-    </> );
+            <Nav />
+        </div>
+    );
 }
- 
+
 export default Coffee;

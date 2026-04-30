@@ -123,13 +123,6 @@ const NotificationInbox = () => {
     }
   };
 
-  if (loading) {
-    return (
-      <div className="ni-loader-container">
-        <div className="ni-loader"></div>
-      </div>
-    );
-  }
 
   return (
     <div className="ni-root">
@@ -148,7 +141,18 @@ const NotificationInbox = () => {
           {list.length > 0 && <h2 className="ni-section-label">{section}</h2>}
           <div className="ni-card-list">
             {list.map((n) => (
-              <article className="ni-card" key={n.id}>
+              <article 
+                className="ni-card clickable" 
+                key={n.id}
+                onClick={() => {
+                  if (n.type === 'complete') navigate('/Payment');
+                  else if (n.type === 'payment') navigate('/PaymentHistory');
+                  else if (n.type === 'station') navigate('/Location');
+                  else if (n.type === 'offer') navigate('/Points');
+                  else if (n.type === 'reservation') navigate('/Bookings');
+                  else if (n.type === 'started') navigate('/Charging');
+                }}
+              >
                 {getIcon(n.type)}
                 <div className="ni-card-content">
                   <div className="ni-card-header">

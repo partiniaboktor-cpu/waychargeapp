@@ -10,10 +10,11 @@ const Uppernav = () => {
   <div className='head'>
   <img className='mobilebattery' src={battery} alt="battery" />
   <div className='header'>
-    <div className='left-nav'>
+    <Link to="/Profile" className='left-nav' style={{ textDecoration: 'none', color: 'inherit' }}>
     <img className='myimg' src={myimg }alt="myimg" />
     <h2 className='name'> Partinia Boktor</h2>
-    </div>
+    </Link>
+
     <Link to="/Notifications">
       <img src={not} alt="notifications" />
     </Link>

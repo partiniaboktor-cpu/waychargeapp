@@ -270,3 +270,27 @@
   gap: 10px;
   cursor: pointer;
 }
+
+.coffee-btn-charge13 {
+  width: calc(100% - 40px);
+  margin: 0 20px 20px;
+  border: 2px dashed #8dc63f;
+  background-color: #fafff0;
+  border-radius: 30px;
+  padding: 15px;
+  color: #8dc63f;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.coffee-btn-charge13:active {
+  transform: scale(0.98);
+  background-color: #f0f7e6;
+}
+

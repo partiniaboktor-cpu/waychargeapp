@@ -32,13 +32,6 @@ const Profile = () => {
         fetchProfile();
     }, []);
 
-    if (loading) {
-        return (
-            <div className="container24" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-                <div className="loader">Loading...</div>
-            </div>
-        );
-    }
 
     const mainProfile = profile ? profile[0] : {};
 
@@ -110,7 +103,7 @@ const Profile = () => {
                     <ChevronIcon />
                 </button>
 
-                <button className="menuItem24">
+                <button className="menuItem24" onClick={() => navigate('/Addcar')}>
                     <div className="menuIcon24"><PersonIcon /></div>
                     <div className="menuContent24">
                         <span className="menuTitle24">Vehicle Profile</span>
@@ -137,7 +130,7 @@ const Profile = () => {
                     <ChevronIcon />
                 </button>
 
-                <button className="menuItem24">
+                <button className="menuItem24" onClick={() => navigate('/Request')}>
                     <div className="menuIcon24"><InfoIcon /></div>
                     <div className="menuContent24">
                         <span className="menuTitle24">Help & Support</span>
