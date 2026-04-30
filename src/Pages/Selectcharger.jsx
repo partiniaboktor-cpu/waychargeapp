@@ -95,9 +95,10 @@ const Selectcharger = () => {
       </div>
     </div>
 
-    
+    <Nav />
     
     </> );
 }
+
  
 export default Selectcharger;
