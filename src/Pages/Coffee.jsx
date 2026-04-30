@@ -83,23 +83,29 @@ const Coffee = () => {
             </div>
 
             <div className="drinkList14">
-                {drinks.filter(d => category === 'All Drinks' || d.category === category).map((drink) => (
-                    <div className="drinkCard14" key={drink.id}>
-                        <div className="drinkIconBox14">
+                {drinks.map((drink) => (
+                    <div 
+                        className="drink-card-premium" 
+                        key={drink.id}
+                        onClick={() => navigate('/Coffeedetail')}
+                        style={{cursor: 'pointer'}}
+                    >
+                        <div className="drink-image-box">
                             {drink.category === 'Iced' ? <IcedIcon /> : <CoffeeIcon />}
+                            {drink.isFree && <span className="free-badge">FREE</span>}
                         </div>
-                        <div className="drinkInfo14">
-                            <div className="drinkTitleRow14">
-                                <span className="drinkName14">{drink.name}</span>
-                                {drink.isFree && <span className="freeBadge14">Free</span>}
+                        <div className="drink-info">
+                            <h4 className="drink-name">{drink.name}</h4>
+                            <p className="drink-desc">{drink.desc}</p>
+                            <div className="drink-footer">
+                                <span className="drink-price">
+                                    {drink.isFree ? 'FREE' : `$${drink.price.toFixed(2)}`}
+                                </span>
+                                <button className="add-small-btn">+</button>
                             </div>
-                            <span className="drinkDesc14">{drink.desc}</span>
-                            <span className="drinkPrice14">${drink.price.toFixed(2)}</span>
                         </div>
-                        <button className="addBtn14" onClick={() => addToCart(drink)}>Add</button>
                     </div>
-                ))}
-            </div>
+                ))}</div>
 
             {/* <footer className="footerCart14">
                 <div className="cartSummary14">
