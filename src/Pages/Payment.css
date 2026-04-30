@@ -7,12 +7,10 @@ body {
   max-width: 414px;
   margin: auto;
   padding: 2px 18px;
-  padding-bottom: calc(2px + 88px + env(safe-area-inset-bottom, 0px));
-
-  height: 110vh;
+  padding-bottom: calc(130px + env(safe-area-inset-bottom, 0px));
+  min-height: 100vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  /* smooth scroll on iOS */
 }
 
 /* top */

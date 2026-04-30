@@ -1,9 +1,38 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Location.css'
 import Uppernav from '../Components/Uppernav';
 import Nav from '../Components/Nav';
+import { supabase } from '../Supabase';
 
 const Location = () => {
+    const [stations, setStations] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function fetchStations() {
+            try {
+                const { data, error } = await supabase
+                    .from('STATIONS')
+                    .select('*')
+                    .order('id', { ascending: true });
+                
+                if (error) throw error;
+                if (data) setStations(data);
+            } catch (err) {
+                console.error('Error fetching stations:', err);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchStations();
+    }, []);
+
+    const displayStations = stations.length > 0 ? stations : [
+        { id: 1, 'Station Name': 'Downtown Charging Hub', Status: 'Available', Rating: '4.5', Location: '123 Main St, San Francisco, CA' },
+        { id: 2, 'Station Name': 'Market Street Station', Status: 'Available', Rating: '4.8', Location: '456 Market St, San Francisco, CA' },
+        { id: 3, 'Station Name': 'Bay Area EV Center', Status: 'Full', Rating: '4.2', Location: '789 Bay St, San Francisco, CA' },
+    ];
+
     return ( <>
     
     <Uppernav />
@@ -33,66 +62,32 @@ const Location = () => {
 
       {/* Stations */}
       <div className="stations23">
-        <h3 className="stations-title23">3 Stations Found</h3>
+        <h3 className="stations-title23">{displayStations.length} Stations Found</h3>
 
-        {/* Card 1 */}
-        <div className="station-card23">
-          <div className="station-header23">
-            <h4 className="station-name23">Downtown Charging Hub</h4>
-            <span className="status available23">Available</span>
-          </div>
+        {displayStations.map((item) => (
+            <div className="station-card23" key={item.id}>
+                <div className="station-header23">
+                    <h4 className="station-name23">{item['Station Name']}</h4>
+                    <span className={`status ${item.Status?.toLowerCase() === 'available' ? 'available23' : 'full23'}`}>
+                        {item.Status}
+                    </span>
+                </div>
 
-          <p className="rating23">⭐ 4.5 <span>0.5 mi</span></p>
-          <p className="address23">123 Main St, San Francisco, CA</p>
+                <p className="rating23">⭐ {item.Rating} <span>0.5 mi</span></p>
+                <p className="address23">{item.Location}</p>
 
-          <div className="info-row23">
-            <span>⚡ 3/8</span>
-            <span>⏱ Fast</span>
-            <span>$ 0.45/kWh</span>
-          </div>
-        </div>
+                <div className="info-row23">
+                    <span>⚡ 3/8</span>
+                    <span>⏱ Fast</span>
+                    <span>$ 0.45/kWh</span>
+                </div>
+            </div>
+        ))}
 
-        {/* Card 2 */}
-        <div className="station-card23">
-          <div className="station-header23">
-            <h4 className="station-name23">Market Street Station</h4>
-            <span className="status available23">Available</span>
-          </div>
-
-          <p className="rating23">⭐ 4.8 <span>1.2 mi</span></p>
-          <p className="address23">456 Market St, San Francisco, CA</p>
-
-          <div className="info-row23">
-            <span>⚡ 5/10</span>
-            <span>⏱ Ultra Fast</span>
-            <span>$ 0.40/kWh</span>
-          </div>
-        </div>
-
-        {/* Card 3 */}
-        <div className="station-card23">
-          <div className="station-header23">
-            <h4 className="station-name23">Bay Area EV Center</h4>
-            <span className="status full23">Full</span>
-          </div>
-
-          <p className="rating23">⭐ 4.2 <span>2.1 mi</span></p>
-          <p className="address23">789 Bay St, San Francisco, CA</p>
-
-          <div className="info-row23">
-            <span>⚡ 0/6</span>
-            <span>⏱ Fast</span>
-            <span>$ 0.50/kWh</span>
-          </div>
-        </div>
+      </div>
 
       </div>
 <Nav />
-    </div>
-    
-    
-    
-    
     </> );
 }
  

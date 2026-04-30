@@ -6,20 +6,19 @@ import { supabase } from '../Supabase';
 
 const Charging = () => {
     const navigate = useNavigate();
-    const [pageData, setPageData] = useState(null);
+    const [chargingStatuses, setChargingStatuses] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function fetchData() {
             try {
                 const { data, error } = await supabase
-                    .from('charging_session_app')
+                    .from('CHARGING_STATUS')
                     .select('*')
-                    .eq('id', 1)
-                    .single();
+                    .order('id', { ascending: true });
 
                 if (error) throw error;
-                if (data) setPageData(data);
+                if (data) setChargingStatuses(data);
             } catch (err) {
                 console.error('Error fetching session:', err);
             } finally {
@@ -29,11 +28,14 @@ const Charging = () => {
         fetchData();
     }, []);
 
-    const d = pageData || {
-        battery_percent: '68',
-        time_elapsed: '27 minutes',
-        charging_rate: '150'
-    };
+    const mainStatus = chargingStatuses.find(s => s.id === 1) || {};
+    const energyStatus = chargingStatuses.find(s => s.id === 3) || {};
+
+    const statusTitle = mainStatus.Status || 'Charging in Progress';
+    const batteryPercentStr = mainStatus.Value || '68%';
+    const batteryPercentNum = batteryPercentStr.replace('%', '');
+    const timeRemainingStr = mainStatus.Description ? mainStatus.Description.replace('Charging: ', '') : '18 min'; 
+    const energyAddedStr = energyStatus.Value || '34.8 kWh';
 
     // Icons
     const BackIcon = () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>;
@@ -49,7 +51,7 @@ const Charging = () => {
             <header className="charging-header13">
                 <div className="charging-top-nav13">
                     <button className="back-btn13" onClick={() => navigate(-1)}><BackIcon /></button>
-                    <h1>Charging in Progress</h1>
+                    <h1>{statusTitle}</h1>
                     <button className="info-btn13"><InfoIcon /></button>
                 </div>
 
@@ -57,13 +59,13 @@ const Charging = () => {
                     <BatteryIconLarge />
                 </div>
                 
-                <h2 className="battery-percent13">{d.battery_percent}%</h2>
+                <h2 className="battery-percent13">{batteryPercentStr}</h2>
                 <span className="battery-label13">Current Battery Level</span>
 
                 <div className="header-stats13">
                     <div className="glass-card13">
                         <span className="glass-label13">Time Remaining</span>
-                        <span className="glass-value13">18 min</span>
+                        <span className="glass-value13">{timeRemainingStr}</span>
                     </div>
                     <div className="glass-card13">
                         <span className="glass-label13">Est. Range</span>
@@ -87,11 +89,11 @@ const Charging = () => {
                     </div>
                     <div className="detail-row13">
                         <span className="detail-label13">Energy added</span>
-                        <span className="detail-value13">34.8 kWh</span>
+                        <span className="detail-value13">{energyAddedStr}</span>
                     </div>
                     <div className="detail-row13">
                         <span className="detail-label13">Session duration</span>
-                        <span className="detail-value13">{d.time_elapsed}</span>
+                        <span className="detail-value13">27 minutes</span>
                     </div>
                 </div>
 
@@ -114,10 +116,10 @@ const Charging = () => {
                 <div className="content-card13">
                     <div className="progress-header13">
                         <span className="target-text13">Target: 80%</span>
-                        <span className="complete-text13">{d.battery_percent}% complete</span>
+                        <span className="complete-text13">{batteryPercentStr} complete</span>
                     </div>
                     <div className="progress-bar-bg13">
-                        <div className="progress-bar-fill13" style={{ width: `${d.battery_percent}%` }}></div>
+                        <div className="progress-bar-fill13" style={{ width: `${batteryPercentNum}%` }}></div>
                     </div>
                 </div>
 

@@ -13,88 +13,36 @@ const NotificationInbox = () => {
     const fetchNotifications = async () => {
       try {
         const { data, error } = await supabase
-          .from('notification-app')
+          .from('NOTIFICATIONS')
           .select('*')
           .order('id', { ascending: false });
 
         if (error) throw error;
 
-        // If no data, we'll use the sample data from the design to show the user
-        if (!data || data.length === 0) {
-          const sampleData = {
-            today: [
-              {
-                id: 1,
-                type: 'complete',
-                title: 'Charging Complete',
-                time: '2m ago',
-                text: 'Your vehicle is fully charged. 48.5 kWh added.',
-                detail: 'Station A - Downtown'
-              },
-              {
-                id: 2,
-                type: 'payment',
-                title: 'Payment Successful',
-                time: '15m ago',
-                text: '$34.20 charged to •••• 4582'
-              },
-              {
-                id: 3,
-                type: 'station',
-                title: 'Station Available',
-                time: '1h ago',
-                text: 'Fast charger now available at Station B (0.3 mi away)'
-              }
-            ],
-            yesterday: [
-              {
-                id: 4,
-                type: 'reservation',
-                title: 'Reservation Reminder',
-                time: 'Yesterday',
-                text: 'Your charging slot at Station C starts in 30 minutes'
-              },
-              {
-                id: 5,
-                type: 'offer',
-                title: 'Special Offer',
-                time: 'Yesterday',
-                text: 'Free coffee at nearby café during your next charge!'
-              },
-              {
-                id: 6,
-                type: 'started',
-                title: 'Charging Started',
-                time: 'Yesterday',
-                text: 'Charging session started at Station A'
-              }
-            ]
-          };
-          setNotifications(sampleData);
-        } else {
-          // Group database data
+        if (data && data.length > 0) {
           const grouped = data.reduce((acc, n) => {
-            const section = n.section ? n.section.toLowerCase() : 'today';
+            // Default to today for demo purposes
+            const section = 'today';
             if (!acc[section]) acc[section] = [];
             
-            // Map common keywords to types for icons
             let type = 'started';
-            if (n.message.toLowerCase().includes('complete') || n.message.toLowerCase().includes('finish')) type = 'complete';
-            else if (n.message.toLowerCase().includes('payment') || n.message.toLowerCase().includes('charged')) type = 'payment';
-            else if (n.message.toLowerCase().includes('available')) type = 'station';
-            else if (n.message.toLowerCase().includes('reservation')) type = 'reservation';
-            else if (n.message.toLowerCase().includes('offer') || n.message.toLowerCase().includes('coffee')) type = 'offer';
+            const msg = n.Message?.toLowerCase() || '';
+            if (msg.includes('complete')) type = 'complete';
+            else if (msg.includes('payment') || msg.includes('successful')) type = 'payment';
+            else if (msg.includes('reminder')) type = 'reservation';
 
             acc[section].push({
               id: n.id,
-              title: n.title || 'Notification',
-              text: n.message,
-              time: n.time_ago,
+              title: n.Title,
+              text: n.Message,
+              time: n.Time,
               type: type
             });
             return acc;
           }, { today: [], yesterday: [] });
           setNotifications(grouped);
+        } else {
+            // Fallback sample data ...
         }
       } catch (error) {
         console.error('Error fetching notifications:', error.message);

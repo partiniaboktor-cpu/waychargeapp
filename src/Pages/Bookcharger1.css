@@ -2,8 +2,9 @@
   max-width: 380px;
   margin: auto;
   padding: 15px;
-  padding-bottom: 96px;
+  padding-bottom: 130px;
   font-family: Arial;
+  min-height: 100vh;
 }
 
 .back28 {

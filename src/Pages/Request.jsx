@@ -1,15 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import './Request.css';
 import Button from '../Components/Button';
 import Nav from '../Components/Nav';
+import { supabase } from '../Supabase';
 
 const Request = () => {
     const navigate = useNavigate();
     
-    // State
     const [chargingType, setChargingType] = useState('Fast');
     const [targetCharge, setTargetCharge] = useState(80);
+    const [requestStatus, setRequestStatus] = useState(null);
+
+    useEffect(() => {
+        async function fetchStatus() {
+            const { data } = await supabase
+                .from('BOOKINGS_REQUESTS')
+                .select('*')
+                .eq('Type', 'Request')
+                .order('id', { ascending: false })
+                .limit(1)
+                .single();
+            if (data) setRequestStatus(data);
+        }
+        fetchStatus();
+    }, []);
 
     // Icons
     const BackIcon = () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>;
@@ -115,8 +130,8 @@ const Request = () => {
             <div className="infoBox22">
                 <div className="infoIcon22"><InfoIcon /></div>
                 <div className="infoContent22">
-                    <span className="infoTitle22">Earn 120 reward points</span>
-                    <p className="infoText22">Free coffee available at Green Bean Café (0.2 mi)</p>
+                    <span className="infoTitle22">{requestStatus?.Status === 'Pending' ? 'Request Pending' : 'Earn 120 reward points'}</span>
+                    <p className="infoText22">{requestStatus?.Description || 'Free coffee available at Green Bean Café (0.2 mi)'}</p>
                 </div>
             </div>
 

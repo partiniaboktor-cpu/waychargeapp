@@ -6,32 +6,9 @@ import { supabase } from '../Supabase';
 
 const Points = () => {
     const navigate = useNavigate();
+    const [rewards, setRewards] = useState([]);
     const [pageData, setPageData] = useState(null);
     const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const { data, error } = await supabase
-                    .from('Points-app')
-                    .select('*')
-                    .order('id', { ascending: true });
-
-                if (error) throw error;
-                if (data && data.length > 0) {
-                    const pointsRow = data.find(d => d.total_points);
-                    setPageData(pointsRow);
-                }
-            } catch (err) {
-                console.error('Error fetching points:', err);
-            } finally {
-                setLoading(false);
-            }
-        }
-        fetchData();
-    }, []);
-
-    const d = pageData || { total_points: '2,450' };
 
     // Icons
     const BackIcon = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>;
@@ -42,6 +19,38 @@ const Points = () => {
     const LockIcon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>;
     const CheckIcon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>;
 
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                // Fetch points balance from existing source
+                const { data: pointsData } = await supabase.from('Points-app').select('*').limit(1).single();
+                if (pointsData) setPageData(pointsData);
+
+                // Fetch rewards from new table
+                const { data: rewardsData, error } = await supabase
+                    .from('REWARDS_POINTS')
+                    .select('*')
+                    .order('id', { ascending: true });
+
+                if (error) throw error;
+                if (rewardsData) setRewards(rewardsData);
+            } catch (err) {
+                console.error('Error fetching data:', err);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchData();
+    }, []);
+
+    const d = pageData || { total_points: '2,450' };
+
+    const getRewardIcon = (name) => {
+        if (name.includes('Coffee')) return <CoffeeIcon />;
+        if (name.includes('Charging') || name.includes('Discount')) return <BoltIcon />;
+        if (name.includes('Priority')) return <StarIcon />;
+        return <StarIcon />;
+    };
 
     return (
         <div className="container21">
@@ -80,53 +89,45 @@ const Points = () => {
 
             <h2 className="section-title21">Available Rewards</h2>
             <div className="rewards-list21">
-                <div className="reward-card21">
-                    <div className="reward-icon-box21"><CoffeeIcon /></div>
-                    <div className="reward-info21">
-                        <span className="reward-name21">Free Coffee</span>
-                        <span className="reward-desc21">Redeem at any partner café</span>
-                        <div className="reward-points21">
-                            <StarIcon /> 500 pts
+                {rewards.length > 0 ? rewards.map((item) => (
+                    <div className="reward-card21" key={item.id}>
+                        <div className="reward-icon-box21">{getRewardIcon(item.Reward)}</div>
+                        <div className="reward-info21">
+                            <span className="reward-name21">{item.Reward}</span>
+                            <span className="reward-desc21">{item.Description}</span>
+                            <div className="reward-points21">
+                                <StarIcon /> {item.Points}
+                            </div>
                         </div>
+                        <button className="redeem-btn21" onClick={() => navigate('/Coffee')}>Redeem</button>
                     </div>
-                    <button className="redeem-btn21" onClick={() => navigate('/Coffee')}>Redeem</button>
-                </div>
-
-                <div className="reward-card21">
-                    <div className="reward-icon-box21"><BoltIcon /></div>
-                    <div className="reward-info21">
-                        <span className="reward-name21">10% Off Charging</span>
-                        <span className="reward-desc21">Valid for next session</span>
-                        <div className="reward-points21">
-                            <StarIcon /> 800 pts
+                )) : (
+                    <>
+                        <div className="reward-card21">
+                            <div className="reward-icon-box21"><CoffeeIcon /></div>
+                            <div className="reward-info21">
+                                <span className="reward-name21">Free Coffee</span>
+                                <span className="reward-desc21">Redeem at any partner café</span>
+                                <div className="reward-points21">
+                                    <StarIcon /> 500 pts
+                                </div>
+                            </div>
+                            <button className="redeem-btn21" onClick={() => navigate('/Coffee')}>Redeem</button>
                         </div>
-                    </div>
-                    <button className="redeem-btn21" onClick={() => navigate('/Coffee')}>Redeem</button>
-                </div>
-
-                <div className="reward-card21">
-                    <div className="reward-icon-box21"><StarIcon /></div>
-                    <div className="reward-info21">
-                        <span className="reward-name21">Priority Access</span>
-                        <span className="reward-desc21">Skip the queue, 24hr pass</span>
-                        <div className="reward-points21">
-                            <StarIcon /> 1,200 pts
+                        
+                        <div className="reward-card21">
+                            <div className="reward-icon-box21"><BoltIcon /></div>
+                            <div className="reward-info21">
+                                <span className="reward-name21">10% Off Charging</span>
+                                <span className="reward-desc21">Valid for next session</span>
+                                <div className="reward-points21">
+                                    <StarIcon /> 800 pts
+                                </div>
+                            </div>
+                            <button className="redeem-btn21" onClick={() => navigate('/Coffee')}>Redeem</button>
                         </div>
-                    </div>
-                    <button className="redeem-btn21">Redeem</button>
-                </div>
-
-                <div className="reward-card21">
-                    <div className="reward-icon-box21"><LockIcon /></div>
-                    <div className="reward-info21">
-                        <span className="reward-name21">Free Month Pass <LockIcon /></span>
-                        <span className="reward-desc21">Unlock at Gold tier</span>
-                        <div className="reward-points21">
-                            <StarIcon /> 3,000 pts
-                        </div>
-                    </div>
-                    <button className="redeem-btn21 locked">Locked</button>
-                </div>
+                    </>
+                )}
             </div>
 
             <h2 className="section-title21">Recent Activity</h2>
@@ -147,15 +148,6 @@ const Points = () => {
                         <span className="activity-time21">Yesterday</span>
                     </div>
                     <span className="activity-points21 minus">-500</span>
-                </div>
-
-                <div className="activity-item21">
-                    <div className="activity-icon-box21 green"><CheckIcon /></div>
-                    <div className="activity-content21">
-                        <span className="activity-title21">Referral bonus</span>
-                        <span className="activity-time21">Apr 27</span>
-                    </div>
-                    <span className="activity-points21 plus">+200</span>
                 </div>
             </div>
 

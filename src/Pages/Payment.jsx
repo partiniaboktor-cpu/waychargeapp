@@ -20,26 +20,21 @@ const Payment = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const { data, error } = await supabase.from('Payment-app').select('*').order('id', { ascending: true });
+            const { data, error } = await supabase.from('PAYMENTS_WALLET').select('*').order('id', { ascending: true });
             if (!error && data) {
-                const headerRow = data.find(d => d.balance);
-                if (headerRow) setPageData(headerRow);
+                const balanceRow = data.find(row => row.Type === 'Balance');
+                const costRow = data.find(row => row.Type === 'Charging cost');
                 
-                const fetchedMethods = data.filter(d => d.card_number).map((d) => ({
-                    id: d.id,
-                    img: d.card_type,
-                    num: d.card_number
-                }));
-                
-                if (fetchedMethods.length > 0) {
-                    setMethods(fetchedMethods);
-                    const defaultCard = data.find(d => d.is_default === 'true');
-                    if (defaultCard) {
-                        setActive(defaultCard.id);
-                    } else {
-                        setActive(fetchedMethods[0].id);
-                    }
+                if (balanceRow || costRow) {
+                    setPageData({
+                        balance: balanceRow ? balanceRow.Amount.replace(' LE', '') : '25,000',
+                        charging_cost: costRow ? costRow.Amount : '2,000 LE',
+                        action: 'Confirm'
+                    });
                 }
+                
+                // Keep cards fallback or fetch if you add a cards table later
+                // For now, cards are not in PAYMENTS_WALLET
             }
         }
         fetchData();

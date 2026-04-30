@@ -1,0 +1,4 @@
+/* Stopcharging page — reuses the same container class as Connectplug */
+.status-page-container10 {
+  padding-bottom: calc(130px + env(safe-area-inset-bottom, 0px));
+}

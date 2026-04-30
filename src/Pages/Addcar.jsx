@@ -160,7 +160,7 @@ const Addcar = () => {
             </div>
 
             <div className="footerAction3">
-                <Button word='Continue' onSwipeComplete={() => navigate('/Selectcharger')} />
+                <Button word='Continue' onSwipeComplete={() => navigate('/Pushlocation')} />
             </div>
         </div>
     );
