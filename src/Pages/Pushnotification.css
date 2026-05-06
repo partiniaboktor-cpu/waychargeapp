@@ -1,0 +1,181 @@
+:root {
+    --primary-green: #8dc63f;
+    --light-green-bg: rgba(141, 198, 63, 0.1);
+    --text-dark: #1a1a1a;
+    --text-muted: #666666;
+    --white: #ffffff;
+}
+
+.push-page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--white);
+    padding: 20px 25px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    position: relative;
+}
+
+.skip-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Illustration Section */
+.illustration-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.concentric-circles {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--light-green-bg);
+}
+
+.circle-large {
+    width: 200px;
+    height: 200px;
+    opacity: 0.3;
+}
+
+.circle-medium {
+    width: 150px;
+    height: 150px;
+    opacity: 0.6;
+}
+
+.circle-small {
+    width: 100px;
+    height: 100px;
+    background-color: var(--light-green-bg);
+}
+
+.main-icon {
+    z-index: 1;
+    color: var(--primary-green);
+}
+
+/* Text Section */
+.text-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.text-section h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.text-section p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    padding: 0 10px;
+}
+
+/* Features List */
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.feature-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light-green-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-green);
+    flex-shrink: 0;
+}
+
+.feature-text h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 2px 0;
+}
+
+.feature-text p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.btn-enable {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-enable:active {
+    transform: scale(0.98);
+    background-color: #7ab231;
+}
+
+.btn-not-now {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Responsive adjustments */
+@media (min-width: 500px) {
+    .push-page-container {
+        max-width: 450px;
+        margin: 20px auto;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        min-height: 90vh;
+        border-radius: 30px;
+    }
+}

@@ -3,8 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Splash from "./Pages/Splash";
 import Onboarding from "./Pages/Onboarding";
 import Login from "./Pages/Login";
-import Verfication from "./Pages/Verfication";
-import CreateAcc from "./Pages/CreateAcc";
 import Addcar from "./Pages/Addcar";
 import Pushlocation from "./Pages/pushlocation";
 import Pushnotification from "./Pages/Pushnotification";
@@ -39,8 +37,6 @@ const RoutingApp = () => {
           <Route path="/Onboarding" element={<Onboarding />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Login" element={<Login />} />
-          <Route path="/Verfication" element={<Verfication />} />
-          <Route path="/CreateAcc" element={<CreateAcc />} />
           <Route path="/Addcar" element={<Addcar />} />
           <Route path="/Pushlocation" element={<Pushlocation />} />
           <Route path="/Pushnotification" element={<Pushnotification />} />
