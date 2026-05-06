@@ -1,123 +1,261 @@
-
-
-.container18 {
-  max-width: 414px;
-  margin: auto;
-  padding: 20px;
-
-  height: 100vh;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+:root {
+    --primary-green: #8dc63f;
+    --text-dark: #1a1a1a;
+    --text-muted: #666666;
+    --white: #ffffff;
+    --border-color: #eeeeee;
+    --error-red: #ff5252;
 }
 
-/* CARD */
-.cardBox18 {
-  background: linear-gradient(to right, #1c1c1c, #2b2b2b);
-  color: white;
-  border-radius: 20px;
-  padding: 20px;
-  position: relative;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+.card-details-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--white);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.chip18 {
-  width: 40px;
+/* Header */
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+    justify-content: space-between;
 }
 
-.bank18 {
-  position: absolute;
-  right: 20px;
-  top: 20px;
+.card-header h1 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-dark);
 }
 
-.number18 {
-  margin-top: 30px;
-  font-size: 18px;
+.back-btn, .more-btn {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
 }
 
-.date18 {
-  margin-top: 10px;
+/* Content */
+.card-details-content {
+    padding: 0 20px 40px;
 }
 
-.holder18 {
-  margin-top: 20px;
+/* Card Preview */
+.card-preview-box {
+    background-color: var(--primary-green);
+    border-radius: 24px;
+    padding: 25px;
+    color: white;
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(141, 198, 63, 0.2);
 }
 
-.master18 {
-  width: 50px;
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
+.card-chip {
+    margin-bottom: 30px;
 }
 
-/* FORM */
-.form18 {
-  margin-top: 20px;
+.card-number-preview {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.input18 {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  border-radius: 15px;
-  margin-top: 10px;
-  background: #ddd;
+.card-number-preview .dots {
+    opacity: 0.8;
+    font-size: 32px;
+    line-height: 0;
+    position: relative;
+    top: -4px;
 }
 
-.row18 {
-  display: flex;
-  gap: 10px;
+.card-bottom-info {
+    display: flex;
+    justify-content: space-between;
 }
 
-/* TOGGLES */
-.toggles18 {
-  margin-top: 20px;
+.info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.toggleRow18 {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
+.info-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
 }
 
-.switch18 {
-  width: 50px;
-  height: 25px;
-  background: #cfd8c3;
-  border-radius: 20px;
-  position: relative;
-  cursor: pointer;
+.info-value {
+    font-size: 15px;
+    font-weight: 600;
 }
 
-.switch18::after {
-  content: "";
-  width: 20px;
-  height: 20px;
-  background: #9e9e9e;
-  position: absolute;
-  top: 2.5px;
-  left: 3px;
-  border-radius: 50%;
-  transition: 0.3s;
+/* Info List */
+.info-list-section {
+    margin-bottom: 35px;
 }
 
-.on18 {
-  background: #8bc34a;
+.info-list-section h2, .settings-section h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
 }
 
-.on18::after {
-  left: 27px;
-  background: #558b2f;
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid #f9f9f9;
 }
 
-/* BUTTON */
-.btn18 {
-  width: 100%;
-  margin-top: 20px;
-  padding: 15px;
-  background: #8bc34a;
-  border: none;
-  border-radius: 25px;
-  color: white;
-  font-size: 18px;
+.info-item .label {
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+.info-item .value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* Settings */
+.settings-section {
+    margin-bottom: 40px;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.setting-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.setting-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.setting-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 26px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e0e0e0;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-green);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* Action Icons */
+.card-action-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 45px;
+}
+
+.action-btn-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-dark);
+}
+
+.action-btn-item span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* Footer Actions */
+.footer-actions {
+    margin-top: auto;
+}
+
+.remove-card-btn {
+    width: 100%;
+    padding: 18px;
+    background-color: transparent;
+    color: var(--error-red);
+    border: 1px solid var(--error-red);
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.remove-card-btn:active {
+    background-color: rgba(255, 82, 82, 0.05);
 }
