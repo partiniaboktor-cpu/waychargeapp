@@ -169,13 +169,4 @@
     padding: 10px;
 }
 
-/* Responsive adjustments */
-@media (min-width: 500px) {
-    .push-page-container {
-        max-width: 450px;
-        margin: 20px auto;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        min-height: 90vh;
-        border-radius: 30px;
-    }
-}
+
