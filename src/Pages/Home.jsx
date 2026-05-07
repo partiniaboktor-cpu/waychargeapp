@@ -25,7 +25,7 @@ const Home = () => {
                     </div>
                     <div className="header-actions">
                         <button className="icon-badge-btn"><ClockIcon /></button>
-                        <button className="icon-badge-btn has-notification" onClick={() => navigate('/Pushnotification')}><BellIcon /></button>
+                        <button className="icon-badge-btn has-notification" onClick={() => navigate('/Notifications')}><BellIcon /></button>
                     </div>
                 </div>
 
