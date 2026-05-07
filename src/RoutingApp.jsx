@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ScrollToTop from "./Components/ScrollToTop";
 import Splash from "./Pages/Splash";
-import Onboarding from "./Pages/Onboarding";
 import Login from "./Pages/Login";
 import Addcar from "./Pages/Addcar";
 import Pushlocation from "./Pages/pushlocation";
@@ -33,9 +33,9 @@ const RoutingApp = () => {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Splash />} />
-          <Route path="/Onboarding" element={<Onboarding />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Addcar" element={<Addcar />} />

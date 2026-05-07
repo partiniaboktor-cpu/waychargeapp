@@ -20,10 +20,10 @@ const PinIcon = () => (
 const Splash = () => {
   const navigate = useNavigate();
 
-  const goOnboarding = () => navigate("/Onboarding");
+  const goLogin = () => navigate("/Login");
 
   useEffect(() => {
-    const t = window.setTimeout(() => navigate("/Onboarding"), 3200);
+    const t = window.setTimeout(() => navigate("/Login"), 3200);
     return () => window.clearTimeout(t);
   }, [navigate]);
 
@@ -32,11 +32,11 @@ const Splash = () => {
       className="splash-root"
       role="button"
       tabIndex={0}
-      onClick={goOnboarding}
+      onClick={goLogin}
       onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") goOnboarding();
+        if (e.key === "Enter" || e.key === " ") goLogin();
       }}
-      aria-label="Continue to onboarding"
+      aria-label="Continue to login"
     >
       <div className="splash-aurora" />
       <div className="splash-ring" />
