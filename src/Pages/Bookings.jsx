@@ -137,8 +137,8 @@ const Bookings = () => {
                                 <div className="card-actions27">
                                     {isActive ? (
                                         <>
-                                            <button className="btn-outline27">Details</button>
-                                            <button className="btn-solid27">View Session</button>
+                                            <button className="btn-outline27" onClick={() => navigate('/Charging')}>Details</button>
+                                            <button className="btn-solid27" onClick={() => navigate('/Charging')}>View Session</button>
                                         </>
                                     ) : isWeekly ? (
                                         <>

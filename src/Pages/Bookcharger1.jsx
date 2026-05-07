@@ -3,17 +3,18 @@ import './Bookcharger1.css'
 import Uppernav from '../Components/Uppernav';
 import Nav from '../Components/Nav';
 import bookcharger1 from '../Assets/bookcharger1.png'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Bookcharger1 = () => {
+    const navigate = useNavigate();
     return ( <>
     
     <Uppernav />
 
        <div className="container28">
 
-       <Link to="/bookings">
+       <Link to="/Bookings">
   <button className="back28">← Back</button>
 </Link>
 
@@ -114,6 +115,24 @@ const Bookcharger1 = () => {
           for a long time in the EV station
         </p>
       </div>
+
+      <button 
+        style={{
+          width: '100%',
+          padding: '16px',
+          backgroundColor: '#8dc63f',
+          color: 'white',
+          border: 'none',
+          borderRadius: '30px',
+          fontSize: '16px',
+          fontWeight: '700',
+          marginTop: '20px',
+          cursor: 'pointer'
+        }}
+        onClick={() => navigate('/Bookings')}
+      >
+        Confirm Booking
+      </button>
 
     </div>
 
