@@ -58,8 +58,22 @@ const Paymentrequired = () => {
 
       {/* Icon Section */}
       <div className="iconBox26">
-        <div className="iconCircle26">
-          <span className="iconExclamation26">!</span>
+        <div className="scannerFrame26">
+          <svg width="180" height="180" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Corners */}
+            <path d="M10 30V15C10 12.2386 12.2386 10 15 10H30" stroke="#8bc34a" strokeWidth="2" strokeLinecap="round"/>
+            <path d="M70 10H85C87.7614 10 100 12.2386 100 15V30" stroke="#8bc34a" strokeWidth="2" strokeLinecap="round" transform="translate(-10, 0)"/>
+            <path d="M10 70V85C10 87.7614 12.2386 100 15 100H30" stroke="#8bc34a" strokeWidth="2" strokeLinecap="round" transform="translate(0, -10)"/>
+            <path d="M70 100H85C87.7614 100 100 87.7614 100 85V70" stroke="#8bc34a" strokeWidth="2" strokeLinecap="round" transform="translate(-10, -10)"/>
+            
+            {/* Main Circle Frame */}
+            <rect x="5" y="5" width="90" height="90" rx="15" stroke="#8bc34a" strokeWidth="2" strokeOpacity="0.5"/>
+            
+            {/* Center Exclamation */}
+            <circle cx="50" cy="50" r="12" stroke="#8bc34a" strokeWidth="1.5"/>
+            <path d="M50 44V52" stroke="#8bc34a" strokeWidth="2" strokeLinecap="round"/>
+            <circle cx="50" cy="56" r="1" fill="#8bc34a"/>
+          </svg>
         </div>
       </div>
 

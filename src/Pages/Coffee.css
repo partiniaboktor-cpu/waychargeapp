@@ -3,16 +3,16 @@
   margin: auto;
   font-family: 'Inter', -apple-system, sans-serif;
   background-color: #ffffff;
-  padding: 0 0 280px; /* space for footer + nav bar */
+  padding: 0 0 180px;
   min-height: 100vh;
-  overflow-y: auto;
+  position: relative;
 }
 
 /* Header */
 .header14 {
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 15px 20px;
   background-color: #fff;
   position: sticky;
   top: 0;
@@ -25,6 +25,7 @@
   margin: 0;
   flex: 1;
   text-align: center;
+  color: #333;
 }
 
 .backBtn14, .searchBtn14 {
@@ -35,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1a1a1a;
+  color: #333;
 }
 
 /* Promo Banner */
@@ -52,7 +53,7 @@
 
 .promoText14 {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Category Tabs */
@@ -61,23 +62,23 @@
   white-space: nowrap;
   padding: 0 20px 20px;
   display: flex;
-  gap: 10px;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  gap: 12px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .tabsScroll14::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+  display: none;
 }
 
 .tabChip14 {
   background-color: #f5f5f5;
-  color: #666;
+  color: #333;
   border: none;
-  padding: 8px 20px;
-  border-radius: 20px;
+  padding: 10px 22px;
+  border-radius: 25px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -95,158 +96,149 @@
   gap: 15px;
 }
 
-.drinkCard14 {
-  background-color: #f9f9f9;
+.drink-card-new {
+  background-color: #f7f7f7;
   border-radius: 20px;
-  padding: 15px;
+  padding: 20px;
   display: flex;
-  align-items: center;
   gap: 15px;
-  position: relative;
+  align-items: flex-start;
 }
 
-.drinkIconBox14 {
-  width: 60px;
-  height: 60px;
-  background-color: #fff;
-  border-radius: 15px;
+.drink-icon-side {
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  border: 1px solid #f0f0f0;
+  color: #666;
 }
 
-.drinkIcon14 {
-  color: #8dc63f;
-}
-
-.drinkInfo14 {
+.drink-content-side {
   flex: 1;
 }
 
-.drinkTitleRow14 {
+.drink-header-row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 2px;
+  align-items: center;
+  margin-bottom: 4px;
 }
 
-.drinkName14 {
+.drink-name-new {
   font-size: 16px;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
 }
 
-.freeBadge14 {
+.free-badge-new {
   background-color: #e8f5e9;
   color: #8dc63f;
   font-size: 10px;
-  font-weight: 800;
-  padding: 2px 6px;
-  border-radius: 4px;
-  text-transform: uppercase;
-}
-
-.drinkDesc14 {
-  font-size: 12px;
-  color: #888;
-  margin-bottom: 8px;
-  display: block;
-}
-
-.drinkPrice14 {
-  font-size: 15px;
   font-weight: 700;
-  color: #1a1a1a;
+  padding: 2px 8px;
+  border-radius: 6px;
 }
 
-.addBtn14 {
+.drink-desc-new {
+  font-size: 13px;
+  color: #888;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+.drink-footer-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drink-price-new {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.add-btn-new {
   background-color: #8dc63f;
   color: white;
   border: none;
-  padding: 8px 18px;
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 700;
+  padding: 8px 25px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
-  transition: transform 0.1s ease;
-}
-
-.addBtn14:active {
-  transform: scale(0.95);
 }
 
 /* Footer Cart */
 .footerCart14 {
   position: fixed;
-  bottom: 115px; /* sits just above the floating nav bar */
-  left: 0;
-  right: 0;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 15px 20px;
-  border-top: 1px solid #eee;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 414px;
+  background-color: #fff;
+  padding: 20px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
   z-index: 100;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  box-sizing: border-box;
 }
-
 
 .cartSummary14 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .cartCountRow14 {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .countCircle14 {
   background-color: #8dc63f;
   color: white;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .cartLabel14 {
-  font-size: 14px;
+  font-size: 15px;
   color: #666;
-  font-weight: 500;
 }
 
 .cartTotal14 {
   font-size: 18px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #333;
 }
 
 .confirmBtn14 {
   width: 100%;
   background-color: #e0e0e0;
-  color: #999;
+  color: #777;
   border: none;
   border-radius: 30px;
-  padding: 16px;
+  padding: 18px;
   font-size: 16px;
-  font-weight: 700;
-  cursor: not-allowed;
-  transition: all 0.2s ease;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .confirmBtn14.active {
   background-color: #8dc63f;
   color: white;
-  cursor: pointer;
 }

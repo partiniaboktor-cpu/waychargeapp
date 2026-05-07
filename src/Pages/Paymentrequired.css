@@ -12,72 +12,75 @@
 /* ICON */
 .iconBox26 {
   margin-top: 20px;
-}
-
-.iconCircle26 {
-  width: 90px;
-  height: 90px;
-  border: 3px solid #8bc34a;
-  border-radius: 20px;
-  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.iconExclamation26 {
-  font-size: 40px;
-  color: #8bc34a;
+.scannerFrame26 {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* TEXT */
 .title26 {
-  margin-top: 20px;
-  font-size: 22px;
-  font-weight: bold;
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: 600;
   color: #8bc34a;
 }
 
 .desc26 {
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 20px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
 }
 
 /* CARD */
 .card26 {
-  background: #f5f5f5;
-  padding: 15px;
-  border-radius: 15px;
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 20px;
   text-align: left;
+  margin-bottom: 20px;
 }
 
 .row26 {
   display: flex;
   justify-content: space-between;
-  margin: 10px 0;
+  margin-bottom: 12px;
 }
 
 .label26 {
-  color: #777;
-  font-size: 13px;
+  color: #888;
+  font-size: 14px;
 }
 
 .value26 {
   font-weight: 500;
   color: #333;
+  font-size: 14px;
 }
 
 .line26 {
-  margin: 10px 0;
-  border: 0.5px solid #ddd;
+  margin: 15px 0;
+  border: none;
+  border-top: 1px solid #eee;
 }
 
 .totalRow26 {
   display: flex;
   justify-content: space-between;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 10px;
 }
 
 .totalValue26 {
@@ -87,32 +90,56 @@
 /* WARNING */
 .warningBox26 {
   margin-top: 15px;
-  background: #fff3cd;
-  border: 1px solid #ffcc80;
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 12px;
-  color: #7a5b00;
+  background: #fff9e6;
+  border: 1px solid #ffeeba;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #856404;
+  display: flex;
+  gap: 12px;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.warningIcon26 {
+  background: none;
+  border: 2px solid #856404;
+  color: #856404;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
 }
 
 /* BUTTON */
 .payBtn26 {
-  margin-top: 20px;
+  margin-top: 30px;
   width: 100%;
-  padding: 14px;
+  padding: 16px;
   border: none;
-  border-radius: 30px;
+  border-radius: 35px;
   background: #8bc34a;
   color: white;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+}
+
+.payBtn26:active {
+  transform: scale(0.98);
 }
 
 /* SUPPORT */
 .support26 {
-  margin-top: 15px;
-  font-size: 13px;
+  margin-top: 20px;
+  font-size: 14px;
   color: #666;
+  font-weight: 500;
   cursor: pointer;
 }
